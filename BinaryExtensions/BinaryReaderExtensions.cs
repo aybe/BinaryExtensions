@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Text;
-using JetBrains.Annotations;
+using BinaryExtensions.Annotations;
 
 // ReSharper disable once CheckNamespace
 namespace System.IO
