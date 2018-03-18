@@ -13,24 +13,6 @@ namespace System.IO
     {
         #region Public fields
 
-        /// <summary>
-        ///     Gets the environment endianness.
-        /// </summary>
-        [PublicAPI] public static readonly Endianness Endianness =
-            BitConverter.IsLittleEndian
-                ? Endianness.LittleEndian
-                : Endianness.BigEndian;
-
-        /// <summary>
-        ///     Gets if the environment endianness is big-endian.
-        /// </summary>
-        [PublicAPI] public static readonly bool IsBigEndian = Endianness == Endianness.BigEndian;
-
-        /// <summary>
-        ///     Gets if the environment endianness is little-endian.
-        /// </summary>
-        [PublicAPI] public static readonly bool IsLittleEndian = Endianness == Endianness.LittleEndian;
-
         #endregion
 
         #region Objects
@@ -518,64 +500,6 @@ namespace System.IO
             return value;
         }
 
-        /// <summary>
-        ///     Reverses the order of bytes in a 16-bit signed integer.
-        /// </summary>
-        /// <param name="value">
-        ///     The value to convert.
-        /// </param>
-        /// <returns>
-        ///     The converted value.
-        /// </returns>
-        [PublicAPI]
-        public static short Reverse(this short value)
-        {
-            unchecked
-            {
-                return (short)
-                (
-                    ((byte) ((value >> 00) & 0xFF) << 08) |
-                    ((byte) ((value >> 08) & 0xFF) << 00)
-                );
-            }
-        }
-
-        /// <summary>
-        ///     Converts a 16-bit signed integer to big-endian format (see Remarks).
-        /// </summary>
-        /// <param name="value">
-        ///     The value to convert.
-        /// </param>
-        /// <returns>
-        ///     The converted value.
-        /// </returns>
-        /// <remarks>
-        ///     The value will be converted according the current value of <see cref="Endianness" />.
-        /// </remarks>
-        [PublicAPI]
-        public static short ToBigEndian(this short value)
-        {
-            return IsBigEndian ? value : value.Reverse();
-        }
-
-        /// <summary>
-        ///     Converts a 16-bit signed integer to little-endian format (see Remarks).
-        /// </summary>
-        /// <param name="value">
-        ///     The value to convert.
-        /// </param>
-        /// <returns>
-        ///     The converted value.
-        /// </returns>
-        /// <remarks>
-        ///     The value will be converted according the current value of <see cref="Endianness" />.
-        /// </remarks>
-        [PublicAPI]
-        public static short ToLittleEndian(this short value)
-        {
-            return IsLittleEndian ? value : value.Reverse();
-        }
-
         #endregion
 
         #region Int32
@@ -674,63 +598,6 @@ namespace System.IO
             return value;
         }
 
-        /// <summary>
-        ///     Reverses the order of bytes in a 32-bit signed integer.
-        /// </summary>
-        /// <param name="value">
-        ///     The value to convert.
-        /// </param>
-        /// <returns>
-        ///     The converted value.
-        /// </returns>
-        [PublicAPI]
-        public static int Reverse(this int value)
-        {
-            unchecked
-            {
-                return ((byte) ((value >> 24) & 0xFF) << 00) |
-                       ((byte) ((value >> 16) & 0xFF) << 08) |
-                       ((byte) ((value >> 08) & 0xFF) << 16) |
-                       ((byte) ((value >> 00) & 0xFF) << 24);
-            }
-        }
-
-        /// <summary>
-        ///     Converts a 32-bit signed integer to big-endian format (see Remarks).
-        /// </summary>
-        /// <param name="value">
-        ///     The value to convert.
-        /// </param>
-        /// <returns>
-        ///     The converted value.
-        /// </returns>
-        /// <remarks>
-        ///     The value will be converted according the current value of <see cref="Endianness" />.
-        /// </remarks>
-        [PublicAPI]
-        public static int ToBigEndian(this int value)
-        {
-            return IsBigEndian ? value : value.Reverse();
-        }
-
-        /// <summary>
-        ///     Converts a 32-bit signed integer to little-endian format (see Remarks).
-        /// </summary>
-        /// <param name="value">
-        ///     The value to convert.
-        /// </param>
-        /// <returns>
-        ///     The converted value.
-        /// </returns>
-        /// <remarks>
-        ///     The value will be converted according the current value of <see cref="Endianness" />.
-        /// </remarks>
-        [PublicAPI]
-        public static int ToLittleEndian(this int value)
-        {
-            return IsLittleEndian ? value : value.Reverse();
-        }
-
         #endregion
 
         #region Int64
@@ -825,67 +692,6 @@ namespace System.IO
             var value = reader.ReadInt64(Endianness.LittleEndian);
 
             return value;
-        }
-
-        /// <summary>
-        ///     Reverses the order of bytes in a 64-bit signed integer.
-        /// </summary>
-        /// <param name="value">
-        ///     The value to convert.
-        /// </param>
-        /// <returns>
-        ///     The converted value.
-        /// </returns>
-        [PublicAPI]
-        public static long Reverse(this long value)
-        {
-            unchecked
-            {
-                return ((byte) ((value >> 56) & 0xFF) << 00) |
-                       ((byte) ((value >> 48) & 0xFF) << 08) |
-                       ((byte) ((value >> 40) & 0xFF) << 16) |
-                       ((byte) ((value >> 32) & 0xFF) << 24) |
-                       ((byte) ((value >> 24) & 0xFF) << 32) |
-                       ((byte) ((value >> 16) & 0xFF) << 40) |
-                       ((byte) ((value >> 08) & 0xFF) << 48) |
-                       ((byte) ((value >> 00) & 0xFF) << 56);
-            }
-        }
-
-        /// <summary>
-        ///     Converts a 64-bit signed integer to big-endian format (see Remarks).
-        /// </summary>
-        /// <param name="value">
-        ///     The value to convert.
-        /// </param>
-        /// <returns>
-        ///     The converted value.
-        /// </returns>
-        /// <remarks>
-        ///     The value will be converted according the current value of <see cref="Endianness" />.
-        /// </remarks>
-        [PublicAPI]
-        public static long ToBigEndian(this long value)
-        {
-            return IsBigEndian ? value : value.Reverse();
-        }
-
-        /// <summary>
-        ///     Converts a 64-bit signed integer to little-endian format (see Remarks).
-        /// </summary>
-        /// <param name="value">
-        ///     The value to convert.
-        /// </param>
-        /// <returns>
-        ///     The converted value.
-        /// </returns>
-        /// <remarks>
-        ///     The value will be converted according the current value of <see cref="Endianness" />.
-        /// </remarks>
-        [PublicAPI]
-        public static long ToLittleEndian(this long value)
-        {
-            return IsLittleEndian ? value : value.Reverse();
         }
 
         #endregion
@@ -986,64 +792,6 @@ namespace System.IO
             return value;
         }
 
-        /// <summary>
-        ///     Reverses the order of bytes in a 16-bit unsigned integer.
-        /// </summary>
-        /// <param name="value">
-        ///     The value to convert.
-        /// </param>
-        /// <returns>
-        ///     The converted value.
-        /// </returns>
-        [PublicAPI]
-        public static ushort Reverse(this ushort value)
-        {
-            unchecked
-            {
-                return (ushort)
-                (
-                    ((byte) ((value >> 00) & 0xFF) << 08) |
-                    ((byte) ((value >> 08) & 0xFF) << 00)
-                );
-            }
-        }
-
-        /// <summary>
-        ///     Converts a 16-bit unsigned integer to big-endian format (see Remarks).
-        /// </summary>
-        /// <param name="value">
-        ///     The value to convert.
-        /// </param>
-        /// <returns>
-        ///     The converted value.
-        /// </returns>
-        /// <remarks>
-        ///     The value will be converted according the current value of <see cref="Endianness" />.
-        /// </remarks>
-        [PublicAPI]
-        public static ushort ToBigEndian(this ushort value)
-        {
-            return IsBigEndian ? value : value.Reverse();
-        }
-
-        /// <summary>
-        ///     Converts a 16-bit unsigned integer to little-endian format (see Remarks).
-        /// </summary>
-        /// <param name="value">
-        ///     The value to convert.
-        /// </param>
-        /// <returns>
-        ///     The converted value.
-        /// </returns>
-        /// <remarks>
-        ///     The value will be converted according the current value of <see cref="Endianness" />.
-        /// </remarks>
-        [PublicAPI]
-        public static ushort ToLittleEndian(this ushort value)
-        {
-            return IsLittleEndian ? value : value.Reverse();
-        }
-
         #endregion
 
         #region UInt32
@@ -1142,66 +890,6 @@ namespace System.IO
             return value;
         }
 
-        /// <summary>
-        ///     Reverses the order of bytes in a 32-bit unsigned integer.
-        /// </summary>
-        /// <param name="value">
-        ///     The value to convert.
-        /// </param>
-        /// <returns>
-        ///     The converted value.
-        /// </returns>
-        [PublicAPI]
-        public static uint Reverse(this uint value)
-        {
-            unchecked
-            {
-                return (uint)
-                (
-                    ((byte) ((value >> 24) & 0xFF) << 00) |
-                    ((byte) ((value >> 16) & 0xFF) << 08) |
-                    ((byte) ((value >> 08) & 0xFF) << 16) |
-                    ((byte) ((value >> 00) & 0xFF) << 24)
-                );
-            }
-        }
-
-        /// <summary>
-        ///     Converts a 32-bit unsigned integer to big-endian format (see Remarks).
-        /// </summary>
-        /// <param name="value">
-        ///     The value to convert.
-        /// </param>
-        /// <returns>
-        ///     The converted value.
-        /// </returns>
-        /// <remarks>
-        ///     The value will be converted according the current value of <see cref="Endianness" />.
-        /// </remarks>
-        [PublicAPI]
-        public static uint ToBigEndian(this uint value)
-        {
-            return IsBigEndian ? value : value.Reverse();
-        }
-
-        /// <summary>
-        ///     Converts a 32-bit unsigned integer to little-endian format (see Remarks).
-        /// </summary>
-        /// <param name="value">
-        ///     The value to convert.
-        /// </param>
-        /// <returns>
-        ///     The converted value.
-        /// </returns>
-        /// <remarks>
-        ///     The value will be converted according the current value of <see cref="Endianness" />.
-        /// </remarks>
-        [PublicAPI]
-        public static uint ToLittleEndian(this uint value)
-        {
-            return IsLittleEndian ? value : value.Reverse();
-        }
-
         #endregion
 
         #region UInt64
@@ -1298,70 +986,6 @@ namespace System.IO
             var value = reader.ReadUInt64(Endianness.LittleEndian);
 
             return value;
-        }
-
-        /// <summary>
-        ///     Reverses the order of bytes in a 64-bit unsigned integer.
-        /// </summary>
-        /// <param name="value">
-        ///     The value to convert.
-        /// </param>
-        /// <returns>
-        ///     The converted value.
-        /// </returns>
-        [PublicAPI]
-        public static ulong Reverse(this ulong value)
-        {
-            unchecked
-            {
-                return (ulong)
-                (
-                    ((byte) ((value >> 56) & 0xFF) << 00) |
-                    ((byte) ((value >> 48) & 0xFF) << 08) |
-                    ((byte) ((value >> 40) & 0xFF) << 16) |
-                    ((byte) ((value >> 32) & 0xFF) << 24) |
-                    ((byte) ((value >> 24) & 0xFF) << 32) |
-                    ((byte) ((value >> 16) & 0xFF) << 40) |
-                    ((byte) ((value >> 08) & 0xFF) << 48) |
-                    ((byte) ((value >> 00) & 0xFF) << 56)
-                );
-            }
-        }
-
-        /// <summary>
-        ///     Converts a 64-bit unsigned integer to big-endian format (see Remarks).
-        /// </summary>
-        /// <param name="value">
-        ///     The value to convert.
-        /// </param>
-        /// <returns>
-        ///     The converted value.
-        /// </returns>
-        /// <remarks>
-        ///     The value will be converted according the current value of <see cref="Endianness" />.
-        /// </remarks>
-        [PublicAPI]
-        public static ulong ToBigEndian(this ulong value)
-        {
-            return IsBigEndian ? value : value.Reverse();
-        }
-
-        /// <summary>
-        ///     Converts a 64-bit unsigned integer to little-endian format (see Remarks).
-        /// </summary>
-        /// <param name="value">
-        ///     The value to convert.
-        /// </param>
-        /// <returns>
-        ///     The converted value.
-        /// </returns>
-        /// <remarks>
-        ///     The value will be converted according the current value of <see cref="Endianness" />.
-        /// </remarks>
-        [PublicAPI]
-        public static ulong ToLittleEndian(this ulong value)
-        {
-            return IsLittleEndian ? value : value.Reverse();
         }
 
         #endregion
