@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Annotations\Annotations.cs" />
     <Compile Include="BinaryReaderExtensions.cs" />
+    <Compile Include="EndiannesExtensions.cs" />
     <Compile Include="Endianness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
