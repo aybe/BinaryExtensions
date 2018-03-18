@@ -36,7 +36,7 @@ namespace System.IO
         ///     The converted value.
         /// </returns>
         [PublicAPI]
-        public static short Reverse(this short value)
+        public static short EndianReverse(this short value)
         {
             unchecked
             {
@@ -58,7 +58,7 @@ namespace System.IO
         ///     The converted value.
         /// </returns>
         [PublicAPI]
-        public static int Reverse(this int value)
+        public static int EndianReverse(this int value)
         {
             unchecked
             {
@@ -79,7 +79,7 @@ namespace System.IO
         ///     The converted value.
         /// </returns>
         [PublicAPI]
-        public static long Reverse(this long value)
+        public static long EndianReverse(this long value)
         {
             unchecked
             {
@@ -104,7 +104,7 @@ namespace System.IO
         ///     The converted value.
         /// </returns>
         [PublicAPI]
-        public static ushort Reverse(this ushort value)
+        public static ushort EndianReverse(this ushort value)
         {
             unchecked
             {
@@ -126,7 +126,7 @@ namespace System.IO
         ///     The converted value.
         /// </returns>
         [PublicAPI]
-        public static uint Reverse(this uint value)
+        public static uint EndianReverse(this uint value)
         {
             unchecked
             {
@@ -150,7 +150,7 @@ namespace System.IO
         ///     The converted value.
         /// </returns>
         [PublicAPI]
-        public static ulong Reverse(this ulong value)
+        public static ulong EndianReverse(this ulong value)
         {
             unchecked
             {
@@ -183,7 +183,7 @@ namespace System.IO
         [PublicAPI]
         public static short ToBigEndian(this short value)
         {
-            return IsBigEndian ? value : value.Reverse();
+            return IsBigEndian ? value : value.EndianReverse();
         }
 
         /// <summary>
@@ -201,7 +201,7 @@ namespace System.IO
         [PublicAPI]
         public static int ToBigEndian(this int value)
         {
-            return IsBigEndian ? value : value.Reverse();
+            return IsBigEndian ? value : value.EndianReverse();
         }
 
         /// <summary>
@@ -219,7 +219,7 @@ namespace System.IO
         [PublicAPI]
         public static long ToBigEndian(this long value)
         {
-            return IsBigEndian ? value : value.Reverse();
+            return IsBigEndian ? value : value.EndianReverse();
         }
 
         /// <summary>
@@ -237,7 +237,7 @@ namespace System.IO
         [PublicAPI]
         public static ushort ToBigEndian(this ushort value)
         {
-            return IsBigEndian ? value : value.Reverse();
+            return IsBigEndian ? value : value.EndianReverse();
         }
 
         /// <summary>
@@ -255,7 +255,7 @@ namespace System.IO
         [PublicAPI]
         public static uint ToBigEndian(this uint value)
         {
-            return IsBigEndian ? value : value.Reverse();
+            return IsBigEndian ? value : value.EndianReverse();
         }
 
         /// <summary>
@@ -273,7 +273,7 @@ namespace System.IO
         [PublicAPI]
         public static ulong ToBigEndian(this ulong value)
         {
-            return IsBigEndian ? value : value.Reverse();
+            return IsBigEndian ? value : value.EndianReverse();
         }
 
         /// <summary>
@@ -291,7 +291,7 @@ namespace System.IO
         [PublicAPI]
         public static short ToLittleEndian(this short value)
         {
-            return IsLittleEndian ? value : value.Reverse();
+            return IsLittleEndian ? value : value.EndianReverse();
         }
 
         /// <summary>
@@ -309,7 +309,7 @@ namespace System.IO
         [PublicAPI]
         public static int ToLittleEndian(this int value)
         {
-            return IsLittleEndian ? value : value.Reverse();
+            return IsLittleEndian ? value : value.EndianReverse();
         }
 
         /// <summary>
@@ -327,7 +327,7 @@ namespace System.IO
         [PublicAPI]
         public static long ToLittleEndian(this long value)
         {
-            return IsLittleEndian ? value : value.Reverse();
+            return IsLittleEndian ? value : value.EndianReverse();
         }
 
         /// <summary>
@@ -345,7 +345,7 @@ namespace System.IO
         [PublicAPI]
         public static ushort ToLittleEndian(this ushort value)
         {
-            return IsLittleEndian ? value : value.Reverse();
+            return IsLittleEndian ? value : value.EndianReverse();
         }
 
         /// <summary>
@@ -363,7 +363,7 @@ namespace System.IO
         [PublicAPI]
         public static uint ToLittleEndian(this uint value)
         {
-            return IsLittleEndian ? value : value.Reverse();
+            return IsLittleEndian ? value : value.EndianReverse();
         }
 
         /// <summary>
@@ -381,7 +381,7 @@ namespace System.IO
         [PublicAPI]
         public static ulong ToLittleEndian(this ulong value)
         {
-            return IsLittleEndian ? value : value.Reverse();
+            return IsLittleEndian ? value : value.EndianReverse();
         }
 
         /// <summary>
