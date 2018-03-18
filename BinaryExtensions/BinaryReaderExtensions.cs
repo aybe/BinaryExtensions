@@ -63,9 +63,38 @@ namespace System.IO
                 throw new ArgumentNullException(nameof(func));
 
             var position = reader.GetPosition();
-            var value = func(reader);
+            var value = reader.Read(func);
 
             reader.SetPosition(position);
+
+            return value;
+        }   
+        
+        /// <summary>
+        ///     Reads an object at current position.
+        /// </summary>
+        /// <typeparam name="T">
+        ///     Object type.
+        /// </typeparam>
+        /// <param name="reader">
+        ///     The <see cref="BinaryReader" /> to read from.
+        /// </param>
+        /// <param name="func">
+        ///     Function that reads the object.
+        /// </param>
+        /// <returns>
+        ///     The object read.
+        /// </returns>
+        [PublicAPI]
+        public static T Read<T>([NotNull] this BinaryReader reader, [NotNull] Func<BinaryReader, T> func)
+        {
+            if (reader == null)
+                throw new ArgumentNullException(nameof(reader));
+
+            if (func == null)
+                throw new ArgumentNullException(nameof(func));
+
+            var value = func(reader);
 
             return value;
         }
