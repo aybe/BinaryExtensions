@@ -405,6 +405,8 @@ namespace System.IO
                     return value.ToBigEndian();
                 case Endianness.LittleEndian:
                     return value.ToLittleEndian();
+                case Endianness.Native:
+                    return value;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(endianness), endianness, null);
             }
@@ -431,6 +433,8 @@ namespace System.IO
                     return value.ToBigEndian();
                 case Endianness.LittleEndian:
                     return value.ToLittleEndian();
+                case Endianness.Native:
+                    return value;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(endianness), endianness, null);
             }
@@ -457,6 +461,8 @@ namespace System.IO
                     return value.ToBigEndian();
                 case Endianness.LittleEndian:
                     return value.ToLittleEndian();
+                case Endianness.Native:
+                    return value;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(endianness), endianness, null);
             }
@@ -483,6 +489,8 @@ namespace System.IO
                     return value.ToBigEndian();
                 case Endianness.LittleEndian:
                     return value.ToLittleEndian();
+                case Endianness.Native:
+                    return value;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(endianness), endianness, null);
             }
@@ -509,6 +517,8 @@ namespace System.IO
                     return value.ToBigEndian();
                 case Endianness.LittleEndian:
                     return value.ToLittleEndian();
+                case Endianness.Native:
+                    return value;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(endianness), endianness, null);
             }
@@ -535,6 +545,8 @@ namespace System.IO
                     return value.ToBigEndian();
                 case Endianness.LittleEndian:
                     return value.ToLittleEndian();
+                case Endianness.Native:
+                    return value;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(endianness), endianness, null);
             }

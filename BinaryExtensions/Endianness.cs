@@ -15,6 +15,11 @@ namespace System.IO
         /// <summary>
         ///     Little-endian byte order.
         /// </summary>
-        LittleEndian
+        LittleEndian,
+
+        /// <summary>
+        /// Platform byte order.
+        /// </summary>
+        Native
     }
 }
