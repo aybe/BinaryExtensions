@@ -1,7 +1,8 @@
-﻿using BinaryExtensions.Annotations;
+﻿using System.IO;
+using BinaryExtensions.Annotations;
 
 // ReSharper disable once CheckNamespace
-namespace System.IO
+namespace System
 {
     /// <summary>
     ///     Extension methods for converting endianness.
@@ -9,9 +10,9 @@ namespace System.IO
     public static class EndiannesExtensions
     {
         /// <summary>
-        ///     Gets the environment endianness.
+        ///     Gets the current environment endianness.
         /// </summary>
-        [PublicAPI] public static readonly Endianness Endianness =
+        [PublicAPI] public static readonly Endianness Current =
             BitConverter.IsLittleEndian
                 ? Endianness.LittleEndian
                 : Endianness.BigEndian;
@@ -19,12 +20,12 @@ namespace System.IO
         /// <summary>
         ///     Gets if the environment endianness is big-endian.
         /// </summary>
-        [PublicAPI] public static readonly bool IsBigEndian = Endianness == Endianness.BigEndian;
+        [PublicAPI] public static readonly bool IsBigEndian = Current == Endianness.BigEndian;
 
         /// <summary>
         ///     Gets if the environment endianness is little-endian.
         /// </summary>
-        [PublicAPI] public static readonly bool IsLittleEndian = Endianness == Endianness.LittleEndian;
+        [PublicAPI] public static readonly bool IsLittleEndian = Current == Endianness.LittleEndian;
 
         /// <summary>
         ///     Reverses the order of bytes in a 16-bit signed integer.
