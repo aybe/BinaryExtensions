@@ -406,28 +406,6 @@ namespace System.IO
 
         #region Int16
 
-        /// <summary>
-        ///     Peeks a 16-bit signed integer.
-        /// </summary>
-        /// <param name="reader">
-        ///     The <see cref="BinaryReader" /> to read from.
-        /// </param>
-        /// <param name="endianness">
-        ///     Integer endianness.
-        /// </param>
-        /// <returns>
-        ///     The integer read.
-        /// </returns>
-        [PublicAPI]
-        public static short PeekInt16([NotNull] this BinaryReader reader, Endianness endianness)
-        {
-            if (reader == null)
-                throw new ArgumentNullException(nameof(reader));
-
-            var value = reader.Peek(s => s.ReadInt16(endianness));
-
-            return value;
-        }
 
         /// <summary>
         ///     Reads a 16-bit signed integer.
@@ -504,28 +482,6 @@ namespace System.IO
 
         #region Int32
 
-        /// <summary>
-        ///     Peeks a 32-bit signed integer.
-        /// </summary>
-        /// <param name="reader">
-        ///     The <see cref="BinaryReader" /> to read from.
-        /// </param>
-        /// <param name="endianness">
-        ///     Integer endianness.
-        /// </param>
-        /// <returns>
-        ///     The integer read.
-        /// </returns>
-        [PublicAPI]
-        public static int PeekInt32([NotNull] this BinaryReader reader, Endianness endianness)
-        {
-            if (reader == null)
-                throw new ArgumentNullException(nameof(reader));
-
-            var value = reader.Peek(s => s.ReadInt32(endianness));
-
-            return value;
-        }
 
         /// <summary>
         ///     Reads a 32-bit signed integer.
@@ -602,28 +558,6 @@ namespace System.IO
 
         #region Int64
 
-        /// <summary>
-        ///     Peeks a 64-bit signed integer.
-        /// </summary>
-        /// <param name="reader">
-        ///     The <see cref="BinaryReader" /> to read from.
-        /// </param>
-        /// <param name="endianness">
-        ///     Integer endianness.
-        /// </param>
-        /// <returns>
-        ///     The integer read.
-        /// </returns>
-        [PublicAPI]
-        public static long PeekInt64([NotNull] this BinaryReader reader, Endianness endianness)
-        {
-            if (reader == null)
-                throw new ArgumentNullException(nameof(reader));
-
-            var value = reader.Peek(s => s.ReadInt64(endianness));
-
-            return value;
-        }
 
         /// <summary>
         ///     Reads a 64-bit signed integer.
@@ -698,28 +632,6 @@ namespace System.IO
 
         #region UInt16
 
-        /// <summary>
-        ///     Peeks a 16-bit unsigned integer.
-        /// </summary>
-        /// <param name="reader">
-        ///     The <see cref="BinaryReader" /> to read from.
-        /// </param>
-        /// <param name="endianness">
-        ///     Integer endianness.
-        /// </param>
-        /// <returns>
-        ///     The integer read.
-        /// </returns>
-        [PublicAPI]
-        public static ushort PeekUInt16([NotNull] this BinaryReader reader, Endianness endianness)
-        {
-            if (reader == null)
-                throw new ArgumentNullException(nameof(reader));
-
-            var value = reader.Peek(s => s.ReadUInt16(endianness));
-
-            return value;
-        }
 
         /// <summary>
         ///     Reads a 16-bit unsigned integer.
@@ -796,28 +708,6 @@ namespace System.IO
 
         #region UInt32
 
-        /// <summary>
-        ///     Peeks a 32-bit unsigned integer.
-        /// </summary>
-        /// <param name="reader">
-        ///     The <see cref="BinaryReader" /> to read from.
-        /// </param>
-        /// <param name="endianness">
-        ///     Integer endiannness.
-        /// </param>
-        /// <returns>
-        ///     The integer read.
-        /// </returns>
-        [PublicAPI]
-        public static uint PeekUInt32([NotNull] this BinaryReader reader, Endianness endianness)
-        {
-            if (reader == null)
-                throw new ArgumentNullException(nameof(reader));
-
-            var value = reader.Peek(s => s.ReadUInt32(endianness));
-
-            return value;
-        }
 
         /// <summary>
         ///     Reads a 32-bit unsigned integer.
@@ -894,28 +784,6 @@ namespace System.IO
 
         #region UInt64
 
-        /// <summary>
-        ///     Peeks a 64-bit unsigned integer.
-        /// </summary>
-        /// <param name="reader">
-        ///     The <see cref="BinaryReader" /> to read from.
-        /// </param>
-        /// <param name="endianness">
-        ///     Integer endianness.
-        /// </param>
-        /// <returns>
-        ///     The integer read.
-        /// </returns>
-        [PublicAPI]
-        public static ulong PeekUInt64([NotNull] this BinaryReader reader, Endianness endianness)
-        {
-            if (reader == null)
-                throw new ArgumentNullException(nameof(reader));
-
-            var value = reader.Peek(s => s.ReadUInt64(endianness));
-
-            return value;
-        }
 
         /// <summary>
         ///     Reads a 64-bit unsigned integer.
