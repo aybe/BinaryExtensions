@@ -169,222 +169,6 @@ namespace System.IO
         }
 
         /// <summary>
-        ///     Converts a 16-bit signed integer to big-endian format (see Remarks).
-        /// </summary>
-        /// <param name="value">
-        ///     The value to convert.
-        /// </param>
-        /// <returns>
-        ///     The converted value.
-        /// </returns>
-        /// <remarks>
-        ///     The value will be converted according the current value of <see cref="Endianness" />.
-        /// </remarks>
-        [PublicAPI]
-        public static short ToBigEndian(this short value)
-        {
-            return IsBigEndian ? value : value.EndianReverse();
-        }
-
-        /// <summary>
-        ///     Converts a 32-bit signed integer to big-endian format (see Remarks).
-        /// </summary>
-        /// <param name="value">
-        ///     The value to convert.
-        /// </param>
-        /// <returns>
-        ///     The converted value.
-        /// </returns>
-        /// <remarks>
-        ///     The value will be converted according the current value of <see cref="Endianness" />.
-        /// </remarks>
-        [PublicAPI]
-        public static int ToBigEndian(this int value)
-        {
-            return IsBigEndian ? value : value.EndianReverse();
-        }
-
-        /// <summary>
-        ///     Converts a 64-bit signed integer to big-endian format (see Remarks).
-        /// </summary>
-        /// <param name="value">
-        ///     The value to convert.
-        /// </param>
-        /// <returns>
-        ///     The converted value.
-        /// </returns>
-        /// <remarks>
-        ///     The value will be converted according the current value of <see cref="Endianness" />.
-        /// </remarks>
-        [PublicAPI]
-        public static long ToBigEndian(this long value)
-        {
-            return IsBigEndian ? value : value.EndianReverse();
-        }
-
-        /// <summary>
-        ///     Converts a 16-bit unsigned integer to big-endian format (see Remarks).
-        /// </summary>
-        /// <param name="value">
-        ///     The value to convert.
-        /// </param>
-        /// <returns>
-        ///     The converted value.
-        /// </returns>
-        /// <remarks>
-        ///     The value will be converted according the current value of <see cref="Endianness" />.
-        /// </remarks>
-        [PublicAPI]
-        public static ushort ToBigEndian(this ushort value)
-        {
-            return IsBigEndian ? value : value.EndianReverse();
-        }
-
-        /// <summary>
-        ///     Converts a 32-bit unsigned integer to big-endian format (see Remarks).
-        /// </summary>
-        /// <param name="value">
-        ///     The value to convert.
-        /// </param>
-        /// <returns>
-        ///     The converted value.
-        /// </returns>
-        /// <remarks>
-        ///     The value will be converted according the current value of <see cref="Endianness" />.
-        /// </remarks>
-        [PublicAPI]
-        public static uint ToBigEndian(this uint value)
-        {
-            return IsBigEndian ? value : value.EndianReverse();
-        }
-
-        /// <summary>
-        ///     Converts a 64-bit unsigned integer to big-endian format (see Remarks).
-        /// </summary>
-        /// <param name="value">
-        ///     The value to convert.
-        /// </param>
-        /// <returns>
-        ///     The converted value.
-        /// </returns>
-        /// <remarks>
-        ///     The value will be converted according the current value of <see cref="Endianness" />.
-        /// </remarks>
-        [PublicAPI]
-        public static ulong ToBigEndian(this ulong value)
-        {
-            return IsBigEndian ? value : value.EndianReverse();
-        }
-
-        /// <summary>
-        ///     Converts a 16-bit signed integer to little-endian format (see Remarks).
-        /// </summary>
-        /// <param name="value">
-        ///     The value to convert.
-        /// </param>
-        /// <returns>
-        ///     The converted value.
-        /// </returns>
-        /// <remarks>
-        ///     The value will be converted according the current value of <see cref="Endianness" />.
-        /// </remarks>
-        [PublicAPI]
-        public static short ToLittleEndian(this short value)
-        {
-            return IsLittleEndian ? value : value.EndianReverse();
-        }
-
-        /// <summary>
-        ///     Converts a 32-bit signed integer to little-endian format (see Remarks).
-        /// </summary>
-        /// <param name="value">
-        ///     The value to convert.
-        /// </param>
-        /// <returns>
-        ///     The converted value.
-        /// </returns>
-        /// <remarks>
-        ///     The value will be converted according the current value of <see cref="Endianness" />.
-        /// </remarks>
-        [PublicAPI]
-        public static int ToLittleEndian(this int value)
-        {
-            return IsLittleEndian ? value : value.EndianReverse();
-        }
-
-        /// <summary>
-        ///     Converts a 64-bit signed integer to little-endian format (see Remarks).
-        /// </summary>
-        /// <param name="value">
-        ///     The value to convert.
-        /// </param>
-        /// <returns>
-        ///     The converted value.
-        /// </returns>
-        /// <remarks>
-        ///     The value will be converted according the current value of <see cref="Endianness" />.
-        /// </remarks>
-        [PublicAPI]
-        public static long ToLittleEndian(this long value)
-        {
-            return IsLittleEndian ? value : value.EndianReverse();
-        }
-
-        /// <summary>
-        ///     Converts a 16-bit unsigned integer to little-endian format (see Remarks).
-        /// </summary>
-        /// <param name="value">
-        ///     The value to convert.
-        /// </param>
-        /// <returns>
-        ///     The converted value.
-        /// </returns>
-        /// <remarks>
-        ///     The value will be converted according the current value of <see cref="Endianness" />.
-        /// </remarks>
-        [PublicAPI]
-        public static ushort ToLittleEndian(this ushort value)
-        {
-            return IsLittleEndian ? value : value.EndianReverse();
-        }
-
-        /// <summary>
-        ///     Converts a 32-bit unsigned integer to little-endian format (see Remarks).
-        /// </summary>
-        /// <param name="value">
-        ///     The value to convert.
-        /// </param>
-        /// <returns>
-        ///     The converted value.
-        /// </returns>
-        /// <remarks>
-        ///     The value will be converted according the current value of <see cref="Endianness" />.
-        /// </remarks>
-        [PublicAPI]
-        public static uint ToLittleEndian(this uint value)
-        {
-            return IsLittleEndian ? value : value.EndianReverse();
-        }
-
-        /// <summary>
-        ///     Converts a 64-bit unsigned integer to little-endian format (see Remarks).
-        /// </summary>
-        /// <param name="value">
-        ///     The value to convert.
-        /// </param>
-        /// <returns>
-        ///     The converted value.
-        /// </returns>
-        /// <remarks>
-        ///     The value will be converted according the current value of <see cref="Endianness" />.
-        /// </remarks>
-        [PublicAPI]
-        public static ulong ToLittleEndian(this ulong value)
-        {
-            return IsLittleEndian ? value : value.EndianReverse();
-        }
-
-        /// <summary>
         ///     Converts a 16-bit signed integer to a specific endianness.
         /// </summary>
         /// <param name="value">
@@ -402,9 +186,9 @@ namespace System.IO
             switch (endianness)
             {
                 case Endianness.BigEndian:
-                    return value.ToBigEndian();
+                    return IsBigEndian ? value : value.EndianReverse();
                 case Endianness.LittleEndian:
-                    return value.ToLittleEndian();
+                    return IsLittleEndian ? value : value.EndianReverse();
                 case Endianness.Native:
                     return value;
                 default:
@@ -430,9 +214,9 @@ namespace System.IO
             switch (endianness)
             {
                 case Endianness.BigEndian:
-                    return value.ToBigEndian();
+                    return IsBigEndian ? value : value.EndianReverse();
                 case Endianness.LittleEndian:
-                    return value.ToLittleEndian();
+                    return IsLittleEndian ? value : value.EndianReverse();
                 case Endianness.Native:
                     return value;
                 default:
@@ -458,9 +242,9 @@ namespace System.IO
             switch (endianness)
             {
                 case Endianness.BigEndian:
-                    return value.ToBigEndian();
+                    return IsBigEndian ? value : value.EndianReverse();
                 case Endianness.LittleEndian:
-                    return value.ToLittleEndian();
+                    return IsLittleEndian ? value : value.EndianReverse();
                 case Endianness.Native:
                     return value;
                 default:
@@ -486,9 +270,9 @@ namespace System.IO
             switch (endianness)
             {
                 case Endianness.BigEndian:
-                    return value.ToBigEndian();
+                    return IsBigEndian ? value : value.EndianReverse();
                 case Endianness.LittleEndian:
-                    return value.ToLittleEndian();
+                    return IsLittleEndian ? value : value.EndianReverse();
                 case Endianness.Native:
                     return value;
                 default:
@@ -514,9 +298,9 @@ namespace System.IO
             switch (endianness)
             {
                 case Endianness.BigEndian:
-                    return value.ToBigEndian();
+                    return IsBigEndian ? value : value.EndianReverse();
                 case Endianness.LittleEndian:
-                    return value.ToLittleEndian();
+                    return IsLittleEndian ? value : value.EndianReverse();
                 case Endianness.Native:
                     return value;
                 default:
@@ -542,9 +326,9 @@ namespace System.IO
             switch (endianness)
             {
                 case Endianness.BigEndian:
-                    return value.ToBigEndian();
+                    return IsBigEndian ? value : value.EndianReverse();
                 case Endianness.LittleEndian:
-                    return value.ToLittleEndian();
+                    return IsLittleEndian ? value : value.EndianReverse();
                 case Endianness.Native:
                     return value;
                 default:

@@ -424,17 +424,9 @@ namespace System.IO
             if (reader == null)
                 throw new ArgumentNullException(nameof(reader));
 
-            var value = reader.ReadInt16();
-
-            switch (endianness)
-            {
-                case Endianness.BigEndian:
-                    return value.ToBigEndian();
-                case Endianness.LittleEndian:
-                    return value.ToLittleEndian();
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(endianness), endianness, null);
-            }
+            var value1 = reader.ReadInt16();
+            var value2 = value1.ToEndian(endianness);
+            return value2;
         }
 
         /// <summary>
@@ -455,17 +447,9 @@ namespace System.IO
             if (reader == null)
                 throw new ArgumentNullException(nameof(reader));
 
-            var value = reader.ReadInt32();
-
-            switch (endianness)
-            {
-                case Endianness.BigEndian:
-                    return value.ToBigEndian();
-                case Endianness.LittleEndian:
-                    return value.ToLittleEndian();
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(endianness), endianness, null);
-            }
+            var value1 = reader.ReadInt32();
+            var value2 = value1.ToEndian(endianness);
+            return value2;
         }
 
         /// <summary>
@@ -484,17 +468,9 @@ namespace System.IO
             if (reader == null)
                 throw new ArgumentNullException(nameof(reader));
 
-            var value = reader.ReadInt64();
-
-            switch (endianness)
-            {
-                case Endianness.BigEndian:
-                    return value.ToBigEndian();
-                case Endianness.LittleEndian:
-                    return value.ToLittleEndian();
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(endianness), endianness, null);
-            }
+            var value1 = reader.ReadInt64();
+            var value2 = value1.ToEndian(endianness);
+            return value2;
         }
 
         /// <summary>
@@ -515,17 +491,9 @@ namespace System.IO
             if (reader == null)
                 throw new ArgumentNullException(nameof(reader));
 
-            var value = reader.ReadUInt16();
-
-            switch (endianness)
-            {
-                case Endianness.BigEndian:
-                    return value.ToBigEndian();
-                case Endianness.LittleEndian:
-                    return value.ToLittleEndian();
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(endianness), endianness, null);
-            }
+            var value1 = reader.ReadUInt16();
+            var value2 = value1.ToEndian(endianness);
+            return value2;
         }
 
         /// <summary>
@@ -546,17 +514,9 @@ namespace System.IO
             if (reader == null)
                 throw new ArgumentNullException(nameof(reader));
 
-            var value = reader.ReadUInt32();
-
-            switch (endianness)
-            {
-                case Endianness.BigEndian:
-                    return value.ToBigEndian();
-                case Endianness.LittleEndian:
-                    return value.ToLittleEndian();
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(endianness), endianness, null);
-            }
+            var value1 = reader.ReadUInt32();
+            var value2 = value1.ToEndian(endianness);
+            return value2;
         }
 
         /// <summary>
@@ -577,17 +537,9 @@ namespace System.IO
             if (reader == null)
                 throw new ArgumentNullException(nameof(reader));
 
-            var value = reader.ReadUInt64();
-
-            switch (endianness)
-            {
-                case Endianness.BigEndian:
-                    return value.ToBigEndian();
-                case Endianness.LittleEndian:
-                    return value.ToLittleEndian();
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(endianness), endianness, null);
-            }
+            var value1 = reader.ReadUInt64();
+            var value2 = value1.ToEndian(endianness);
+            return value2;
         }
 
         #endregion
