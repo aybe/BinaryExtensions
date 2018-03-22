@@ -44,10 +44,10 @@ namespace System.IO
             if (func == null)
                 throw new ArgumentNullException(nameof(func));
 
-            var position = reader.GetPosition();
+            var position = reader.Position();
             var value = reader.Read(func);
 
-            reader.SetPosition(position);
+            reader.Position(position);
 
             return value;
         }   
@@ -250,7 +250,7 @@ namespace System.IO
         ///     The length of the underlying stream.
         /// </returns>
         [PublicAPI]
-        public static long GetLength([NotNull] this BinaryReader reader)
+        public static long Length([NotNull] this BinaryReader reader)
         {
             if (reader == null)
                 throw new ArgumentNullException(nameof(reader));
@@ -271,7 +271,7 @@ namespace System.IO
         ///     <paramref name="length" /> is less than zero.
         /// </exception>
         [PublicAPI]
-        public static void SetLength([NotNull] this BinaryReader reader, long length)
+        public static void Length([NotNull] this BinaryReader reader, long length)
         {
             if (reader == null)
                 throw new ArgumentNullException(nameof(reader));
@@ -306,10 +306,10 @@ namespace System.IO
             if (alignment <= 0)
                 throw new ArgumentOutOfRangeException(nameof(alignment));
 
-            var position1 = reader.GetPosition();
+            var position1 = reader.Position();
             var position2 = position1 + position1 % alignment;
 
-            reader.SetPosition(position2);
+            reader.Position(position2);
         }
 
         /// <summary>
@@ -322,7 +322,7 @@ namespace System.IO
         ///     The position of the underlying stream.
         /// </returns>
         [PublicAPI]
-        public static long GetPosition([NotNull] this BinaryReader reader)
+        public static long Position([NotNull] this BinaryReader reader)
         {
             if (reader == null)
                 throw new ArgumentNullException(nameof(reader));
@@ -343,7 +343,7 @@ namespace System.IO
         ///     <paramref name="position" /> is less than zero.
         /// </exception>
         [PublicAPI]
-        public static void SetPosition([NotNull] this BinaryReader reader, long position)
+        public static void Position([NotNull] this BinaryReader reader, long position)
         {
             if (reader == null)
                 throw new ArgumentNullException(nameof(reader));
