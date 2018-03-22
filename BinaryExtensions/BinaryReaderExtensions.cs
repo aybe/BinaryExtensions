@@ -404,8 +404,7 @@ namespace System.IO
 
         #endregion
 
-        #region Int16
-
+        #region Integers
 
         /// <summary>
         ///     Reads a 16-bit signed integer.
@@ -439,51 +438,6 @@ namespace System.IO
         }
 
         /// <summary>
-        ///     Reads a 16-bit signed integer in big-endian format.
-        /// </summary>
-        /// <param name="reader">
-        ///     The <see cref="BinaryReader" /> to read from.
-        /// </param>
-        /// <returns>
-        ///     The integer read.
-        /// </returns>
-        [PublicAPI]
-        public static short ReadInt16BE([NotNull] this BinaryReader reader)
-        {
-            if (reader == null)
-                throw new ArgumentNullException(nameof(reader));
-
-            var value = reader.ReadInt16(Endianness.BigEndian);
-
-            return value;
-        }
-
-        /// <summary>
-        ///     Reads a 16-bit signed integer in little-endian format.
-        /// </summary>
-        /// <param name="reader">
-        ///     The <see cref="BinaryReader" /> to read from.
-        /// </param>
-        /// <returns>
-        ///     The integer read.
-        /// </returns>
-        [PublicAPI]
-        public static short ReadInt16LE([NotNull] this BinaryReader reader)
-        {
-            if (reader == null)
-                throw new ArgumentNullException(nameof(reader));
-
-            var value = reader.ReadInt16(Endianness.LittleEndian);
-
-            return value;
-        }
-
-        #endregion
-
-        #region Int32
-
-
-        /// <summary>
         ///     Reads a 32-bit signed integer.
         /// </summary>
         /// <param name="reader">
@@ -515,51 +469,6 @@ namespace System.IO
         }
 
         /// <summary>
-        ///     Reads a 32-bit signed integer in big-endian format.
-        /// </summary>
-        /// <param name="reader">
-        ///     The <see cref="BinaryReader" /> to read from.
-        /// </param>
-        /// <returns>
-        ///     The integer read.
-        /// </returns>
-        [PublicAPI]
-        public static int ReadInt32BE([NotNull] this BinaryReader reader)
-        {
-            if (reader == null)
-                throw new ArgumentNullException(nameof(reader));
-
-            var value = reader.ReadInt32(Endianness.BigEndian);
-
-            return value;
-        }
-
-        /// <summary>
-        ///     Reads a 32-bit signed integer in little-endian format.
-        /// </summary>
-        /// <param name="reader">
-        ///     The <see cref="BinaryReader" /> to read from.
-        /// </param>
-        /// <returns>
-        ///     The integer read.
-        /// </returns>
-        [PublicAPI]
-        public static int ReadInt32LE([NotNull] this BinaryReader reader)
-        {
-            if (reader == null)
-                throw new ArgumentNullException(nameof(reader));
-
-            var value = reader.ReadInt32(Endianness.LittleEndian);
-
-            return value;
-        }
-
-        #endregion
-
-        #region Int64
-
-
-        /// <summary>
         ///     Reads a 64-bit signed integer.
         /// </summary>
         /// <param name="reader">The <see cref="BinaryReader" /> to read from.</param>
@@ -587,51 +496,6 @@ namespace System.IO
                     throw new ArgumentOutOfRangeException(nameof(endianness), endianness, null);
             }
         }
-
-        /// <summary>
-        ///     Reads a 64-bit signed integer in big-endian format.
-        /// </summary>
-        /// <param name="reader">
-        ///     The <see cref="BinaryReader" /> to read from.
-        /// </param>
-        /// <returns>
-        ///     The integer read.
-        /// </returns>
-        [PublicAPI]
-        public static long ReadInt64BE([NotNull] this BinaryReader reader)
-        {
-            if (reader == null)
-                throw new ArgumentNullException(nameof(reader));
-
-            var value = reader.ReadInt64(Endianness.BigEndian);
-
-            return value;
-        }
-
-        /// <summary>
-        ///     Reads a 64-bit signed integer in little-endian format.
-        /// </summary>
-        /// <param name="reader">
-        ///     The <see cref="BinaryReader" /> to read from.
-        /// </param>
-        /// <returns>
-        ///     The integer read.
-        /// </returns>
-        [PublicAPI]
-        public static long ReadInt64LE([NotNull] this BinaryReader reader)
-        {
-            if (reader == null)
-                throw new ArgumentNullException(nameof(reader));
-
-            var value = reader.ReadInt64(Endianness.LittleEndian);
-
-            return value;
-        }
-
-        #endregion
-
-        #region UInt16
-
 
         /// <summary>
         ///     Reads a 16-bit unsigned integer.
@@ -665,51 +529,6 @@ namespace System.IO
         }
 
         /// <summary>
-        ///     Reads a 16-bit unsigned integer in big-endian format.
-        /// </summary>
-        /// <param name="reader">
-        ///     The <see cref="BinaryReader" /> to read from.
-        /// </param>
-        /// <returns>
-        ///     The integer read.
-        /// </returns>
-        [PublicAPI]
-        public static ushort ReadUInt16BE([NotNull] this BinaryReader reader)
-        {
-            if (reader == null)
-                throw new ArgumentNullException(nameof(reader));
-
-            var value = reader.ReadUInt16(Endianness.BigEndian);
-
-            return value;
-        }
-
-        /// <summary>
-        ///     Reads a 16-bit unsigned integer in little-endian format.
-        /// </summary>
-        /// <param name="reader">
-        ///     The <see cref="BinaryReader" /> to read from.
-        /// </param>
-        /// <returns>
-        ///     The integer read.
-        /// </returns>
-        [PublicAPI]
-        public static ushort ReadUInt16LE([NotNull] this BinaryReader reader)
-        {
-            if (reader == null)
-                throw new ArgumentNullException(nameof(reader));
-
-            var value = reader.ReadUInt16(Endianness.LittleEndian);
-
-            return value;
-        }
-
-        #endregion
-
-        #region UInt32
-
-
-        /// <summary>
         ///     Reads a 32-bit unsigned integer.
         /// </summary>
         /// <param name="reader">
@@ -741,51 +560,6 @@ namespace System.IO
         }
 
         /// <summary>
-        ///     Reads a 32-bit unsigned integer in big-endian format.
-        /// </summary>
-        /// <param name="reader">
-        ///     The <see cref="BinaryReader" /> to read from.
-        /// </param>
-        /// <returns>
-        ///     The integer read.
-        /// </returns>
-        [PublicAPI]
-        public static uint ReadUInt32BE([NotNull] this BinaryReader reader)
-        {
-            if (reader == null)
-                throw new ArgumentNullException(nameof(reader));
-
-            var value = reader.ReadUInt32(Endianness.BigEndian);
-
-            return value;
-        }
-
-        /// <summary>
-        ///     Reads a 32-bit unsigned integer in little-endian format.
-        /// </summary>
-        /// <param name="reader">
-        ///     The <see cref="BinaryReader" /> to read from.
-        /// </param>
-        /// <returns>
-        ///     The integer read.
-        /// </returns>
-        [PublicAPI]
-        public static uint ReadUInt32LE([NotNull] this BinaryReader reader)
-        {
-            if (reader == null)
-                throw new ArgumentNullException(nameof(reader));
-
-            var value = reader.ReadUInt32(Endianness.LittleEndian);
-
-            return value;
-        }
-
-        #endregion
-
-        #region UInt64
-
-
-        /// <summary>
         ///     Reads a 64-bit unsigned integer.
         /// </summary>
         /// <param name="reader">
@@ -814,46 +588,6 @@ namespace System.IO
                 default:
                     throw new ArgumentOutOfRangeException(nameof(endianness), endianness, null);
             }
-        }
-
-        /// <summary>
-        ///     Reads a 64-bit unsigned integer in big-endian format.
-        /// </summary>
-        /// <param name="reader">
-        ///     The <see cref="BinaryReader" /> to read from.
-        /// </param>
-        /// <returns>
-        ///     The integer read.
-        /// </returns>
-        [PublicAPI]
-        public static ulong ReadUInt64BE([NotNull] this BinaryReader reader)
-        {
-            if (reader == null)
-                throw new ArgumentNullException(nameof(reader));
-
-            var value = reader.ReadUInt64(Endianness.BigEndian);
-
-            return value;
-        }
-
-        /// <summary>
-        ///     Reads a 64-bit unsigned integer in little-endian format.
-        /// </summary>
-        /// <param name="reader">
-        ///     The <see cref="BinaryReader" /> to read from.
-        /// </param>
-        /// <returns>
-        ///     The integer read.
-        /// </returns>
-        [PublicAPI]
-        public static ulong ReadUInt64LE([NotNull] this BinaryReader reader)
-        {
-            if (reader == null)
-                throw new ArgumentNullException(nameof(reader));
-
-            var value = reader.ReadUInt64(Endianness.LittleEndian);
-
-            return value;
         }
 
         #endregion
