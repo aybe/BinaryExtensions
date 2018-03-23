@@ -43,8 +43,8 @@ namespace System
             {
                 return (short)
                 (
-                    ((byte) ((value >> 00) & 0xFF) << 08) |
-                    ((byte) ((value >> 08) & 0xFF) << 00)
+                    (((value >> 00) & 0xFF) << 08) |
+                    (((value >> 08) & 0xFF) << 00)
                 );
             }
         }
@@ -61,13 +61,10 @@ namespace System
         [PublicAPI]
         public static int EndianReverse(this int value)
         {
-            unchecked
-            {
-                return ((byte) ((value >> 24) & 0xFF) << 00) |
-                       ((byte) ((value >> 16) & 0xFF) << 08) |
-                       ((byte) ((value >> 08) & 0xFF) << 16) |
-                       ((byte) ((value >> 00) & 0xFF) << 24);
-            }
+            return (((value >> 24) & 0xFF) << 00) |
+                   (((value >> 16) & 0xFF) << 08) |
+                   (((value >> 08) & 0xFF) << 16) |
+                   (((value >> 00) & 0xFF) << 24);
         }
 
         /// <summary>
@@ -82,17 +79,14 @@ namespace System
         [PublicAPI]
         public static long EndianReverse(this long value)
         {
-            unchecked
-            {
-                return ((byte) ((value >> 56) & 0xFF) << 00) |
-                       ((byte) ((value >> 48) & 0xFF) << 08) |
-                       ((byte) ((value >> 40) & 0xFF) << 16) |
-                       ((byte) ((value >> 32) & 0xFF) << 24) |
-                       ((byte) ((value >> 24) & 0xFF) << 32) |
-                       ((byte) ((value >> 16) & 0xFF) << 40) |
-                       ((byte) ((value >> 08) & 0xFF) << 48) |
-                       ((byte) ((value >> 00) & 0xFF) << 56);
-            }
+            return (((value >> 56) & 0xFF) << 00) |
+                   (((value >> 48) & 0xFF) << 08) |
+                   (((value >> 40) & 0xFF) << 16) |
+                   (((value >> 32) & 0xFF) << 24) |
+                   (((value >> 24) & 0xFF) << 32) |
+                   (((value >> 16) & 0xFF) << 40) |
+                   (((value >> 08) & 0xFF) << 48) |
+                   (((value >> 00) & 0xFF) << 56);
         }
 
         /// <summary>
@@ -111,8 +105,8 @@ namespace System
             {
                 return (ushort)
                 (
-                    ((byte) ((value >> 00) & 0xFF) << 08) |
-                    ((byte) ((value >> 08) & 0xFF) << 00)
+                    (((value >> 00) & 0xFF) << 08) |
+                    (((value >> 08) & 0xFF) << 00)
                 );
             }
         }
@@ -129,16 +123,10 @@ namespace System
         [PublicAPI]
         public static uint EndianReverse(this uint value)
         {
-            unchecked
-            {
-                return (uint)
-                (
-                    ((byte) ((value >> 24) & 0xFF) << 00) |
-                    ((byte) ((value >> 16) & 0xFF) << 08) |
-                    ((byte) ((value >> 08) & 0xFF) << 16) |
-                    ((byte) ((value >> 00) & 0xFF) << 24)
-                );
-            }
+            return (((value >> 24) & 0xFF) << 00) |
+                   (((value >> 16) & 0xFF) << 08) |
+                   (((value >> 08) & 0xFF) << 16) |
+                   (((value >> 00) & 0xFF) << 24);
         }
 
         /// <summary>
@@ -153,20 +141,14 @@ namespace System
         [PublicAPI]
         public static ulong EndianReverse(this ulong value)
         {
-            unchecked
-            {
-                return (ulong)
-                (
-                    ((byte) ((value >> 56) & 0xFF) << 00) |
-                    ((byte) ((value >> 48) & 0xFF) << 08) |
-                    ((byte) ((value >> 40) & 0xFF) << 16) |
-                    ((byte) ((value >> 32) & 0xFF) << 24) |
-                    ((byte) ((value >> 24) & 0xFF) << 32) |
-                    ((byte) ((value >> 16) & 0xFF) << 40) |
-                    ((byte) ((value >> 08) & 0xFF) << 48) |
-                    ((byte) ((value >> 00) & 0xFF) << 56)
-                );
-            }
+            return (((value >> 56) & 0xFF) << 00) |
+                   (((value >> 48) & 0xFF) << 08) |
+                   (((value >> 40) & 0xFF) << 16) |
+                   (((value >> 32) & 0xFF) << 24) |
+                   (((value >> 24) & 0xFF) << 32) |
+                   (((value >> 16) & 0xFF) << 40) |
+                   (((value >> 08) & 0xFF) << 48) |
+                   (((value >> 00) & 0xFF) << 56);
         }
 
         /// <summary>
