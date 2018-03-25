@@ -442,6 +442,51 @@ namespace System.IO
 
         #endregion
 
+        #region Bytes
+
+        /// <summary>
+        ///     Reads bytes at specified position.
+        /// </summary>
+        /// <param name="reader">
+        ///     The <see cref="BinaryReader" /> to read from.
+        /// </param>
+        /// <param name="count">
+        ///     Number of bytes to read.
+        /// </param>
+        /// <param name="position">
+        ///     Position to read from.
+        /// </param>
+        /// <returns>
+        ///     The bytes read.
+        /// </returns>
+        /// <exception cref="ArgumentNullException">
+        ///     <paramref name="reader" /> is <c>null</c>.
+        /// </exception>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     <paramref name="count" /> and <paramref name="position" /> defines invalid range.
+        /// </exception>
+        [PublicAPI]
+        public static byte[] ReadBytes([NotNull] this BinaryReader reader, int count, long position)
+        {
+            if (reader == null)
+                throw new ArgumentNullException(nameof(reader));
+
+            if (count <= 0)
+                throw new ArgumentOutOfRangeException(nameof(count));
+
+            if (position <= 0)
+                throw new ArgumentOutOfRangeException(nameof(position));
+
+            if (reader.Length() < position + count)
+                throw new ArgumentOutOfRangeException(nameof(count));
+
+            reader.Position(position);
+
+            return reader.ReadBytes(count);
+        }
+
+        #endregion
+
         #region Integers
 
         /// <summary>
