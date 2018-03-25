@@ -205,40 +205,6 @@ namespace System.IO
         #region String
 
         /// <summary>
-        ///     Peeks an ASCII string (see Remarks).
-        /// </summary>
-        /// <param name="reader">
-        ///     The <see cref="BinaryReader" /> to read from.
-        /// </param>
-        /// <param name="length">
-        ///     String length.
-        /// </param>
-        /// <returns>
-        ///     Length of the string to read.
-        /// </returns>
-        /// <exception cref="ArgumentOutOfRangeException">
-        ///     <paramref name="length" /> is less than or equal to zero.
-        /// </exception>
-        /// <remarks>
-        ///     Method calls <see cref="ReadStringAscii(System.IO.BinaryReader,int)" /> internally.
-        /// </remarks>
-        [PublicAPI]
-        public static string PeekStringAscii([NotNull] this BinaryReader reader, int length)
-        {
-            if (reader == null)
-                throw new ArgumentNullException(nameof(reader));
-
-            if (length <= 0)
-                throw new ArgumentOutOfRangeException(nameof(length));
-
-            var ascii = reader.ReadStringAscii(length);
-
-            reader.Roll(length);
-
-            return ascii;
-        }
-
-        /// <summary>
         ///     Reads an ASCII string.
         /// </summary>
         /// <param name="reader">
