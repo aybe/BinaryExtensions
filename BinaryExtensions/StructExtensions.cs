@@ -36,7 +36,7 @@ namespace System
         ///     The structure must be blittable and have <see cref="StructLayoutAttribute" /> applied.
         /// </remarks>
         [PublicAPI]
-        public static int GetOffset<TStruct, TField>(
+        public static int OffsetOf<TStruct, TField>(
             this TStruct @struct, Expression<Func<TStruct, TField>> expression, FieldOffset offset = FieldOffset.Begin)
             where TStruct : struct
         {
