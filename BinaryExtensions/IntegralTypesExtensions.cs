@@ -554,5 +554,59 @@ namespace System
         {
             return $"0x{value:X16}";
         }
+
+        /// <summary>
+        ///     Converts a 32-bit unsigned integer to a 32-bit signed integer (see Remarks).
+        /// </summary>
+        /// <param name="value">
+        ///     The value to convert.
+        /// </param>
+        /// <returns>
+        ///     The converted value.
+        /// </returns>
+        /// <remarks>
+        ///     Uses <see cref="Convert.ToInt32(uint)" /> for the conversion.
+        /// </remarks>
+        [PublicAPI]
+        public static int ToInt32(this uint value)
+        {
+            return Convert.ToInt32(value);
+        }
+
+        /// <summary>
+        ///     Converts a 64-bit signed integer to a 32-bit signed integer (see Remarks).
+        /// </summary>
+        /// <param name="value">
+        ///     The value to convert.
+        /// </param>
+        /// <returns>
+        ///     The converted value.
+        /// </returns>
+        /// <remarks>
+        ///     Uses <see cref="Convert.ToInt32(long)" /> for the conversion.
+        /// </remarks>
+        [PublicAPI]
+        public static int ToInt32(this long value)
+        {
+            return Convert.ToInt32(value);
+        }
+
+        /// <summary>
+        ///     Converts a 64-bit unsigned integer to a 32-bit signed integer (see Remarks).
+        /// </summary>
+        /// <param name="value">
+        ///     The value to convert.
+        /// </param>
+        /// <returns>
+        ///     The converted value.
+        /// </returns>
+        /// <remarks>
+        ///     Uses <see cref="Convert.ToInt32(ulong)" /> for the conversion.
+        /// </remarks>
+        [PublicAPI]
+        public static int ToInt32(this ulong value)
+        {
+            return Convert.ToInt32(value);
+        }
     }
 }
