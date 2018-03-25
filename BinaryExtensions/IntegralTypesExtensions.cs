@@ -423,5 +423,117 @@ namespace System
 
             return value;
         }
+
+        /// <summary>
+        ///     Converts this value to an hexadecimal string prefixed with '0x'.
+        /// </summary>
+        /// <param name="value">
+        ///     The value to convert.
+        /// </param>
+        /// <returns>
+        ///     The converted value.
+        /// </returns>
+        public static string ToStringHex(this byte value)
+        {
+            return $"0x{value:X2}";
+        }
+
+        /// <summary>
+        ///     Converts this value to an hexadecimal string prefixed with '0x'.
+        /// </summary>
+        /// <param name="value">
+        ///     The value to convert.
+        /// </param>
+        /// <returns>
+        ///     The converted value.
+        /// </returns>
+        public static string ToStringHex(this sbyte value)
+        {
+            return $"0x{value:X2}";
+        }
+
+        /// <summary>
+        ///     Converts this value to an hexadecimal string prefixed with '0x'.
+        /// </summary>
+        /// <param name="value">
+        ///     The value to convert.
+        /// </param>
+        /// <returns>
+        ///     The converted value.
+        /// </returns>
+        public static string ToStringHex(this ushort value)
+        {
+            return $"0x{value:X4}";
+        }
+
+        /// <summary>
+        ///     Converts this value to an hexadecimal string prefixed with '0x'.
+        /// </summary>
+        /// <param name="value">
+        ///     The value to convert.
+        /// </param>
+        /// <returns>
+        ///     The converted value.
+        /// </returns>
+        public static string ToStringHex(this short value)
+        {
+            return $"0x{value:X4}";
+        }
+
+        /// <summary>
+        ///     Converts this value to an hexadecimal string prefixed with '0x'.
+        /// </summary>
+        /// <param name="value">
+        ///     The value to convert.
+        /// </param>
+        /// <returns>
+        ///     The converted value.
+        /// </returns>
+        public static string ToStringHex(this uint value)
+        {
+            return $"0x{value:X8}";
+        }
+
+        /// <summary>
+        ///     Converts this value to an hexadecimal string prefixed with '0x'.
+        /// </summary>
+        /// <param name="value">
+        ///     The value to convert.
+        /// </param>
+        /// <returns>
+        ///     The converted value.
+        /// </returns>
+        public static string ToStringHex(this int value)
+        {
+            return $"0x{value:X8}";
+        }
+
+        /// <summary>
+        ///     Converts this value to an hexadecimal string prefixed with '0x'.
+        /// </summary>
+        /// <param name="value">
+        ///     The value to convert.
+        /// </param>
+        /// <returns>
+        ///     The converted value.
+        /// </returns>
+        public static string ToStringHex(this ulong value)
+        {
+            return $"0x{value:X16}";
+        }
+
+        /// <summary>
+        ///     Converts this value to an hexadecimal string prefixed with '0x'.
+        /// </summary>
+        /// <param name="value">
+        ///     The value to convert.
+        /// </param>
+        /// <returns>
+        ///     The converted value.
+        /// </returns>
+        public static string ToStringHex(this long value)
+        {
+            return $"0x{value:X16}";
+        }
     }
 }
