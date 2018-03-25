@@ -19,6 +19,9 @@ namespace System
         /// <param name="startIndex">
         ///     The starting position within the array.
         /// </param>
+        /// <param name="endianness">
+        ///     The integer endianness.
+        /// </param>
         /// <returns>
         ///     The integer read.
         /// </returns>
@@ -28,7 +31,7 @@ namespace System
         /// <exception cref="ArgumentOutOfRangeException">
         ///     <paramref name="startIndex" /> is not a valid position.
         /// </exception>
-        public static short GetInt16(this byte[] bytes, int startIndex)
+        public static short GetInt16(this byte[] bytes, int startIndex, Endianness endianness = Endianness.Native)
         {
             if (bytes == null)
                 throw new ArgumentNullException(nameof(bytes));
@@ -36,9 +39,9 @@ namespace System
             if (startIndex < 0 || sizeof(short) > bytes.Length - startIndex)
                 throw new ArgumentOutOfRangeException(nameof(startIndex));
 
-            var value = BitConverter.ToInt16(bytes, startIndex);
-
-            return value;
+            var value1 = BitConverter.ToInt16(bytes, startIndex);
+            var value2 = value1.ToEndian(endianness);
+            return value2;
         }
 
         /// <summary>
@@ -50,6 +53,9 @@ namespace System
         /// <param name="startIndex">
         ///     The starting position within the array.
         /// </param>
+        /// <param name="endianness">
+        ///     The integer endianness.
+        /// </param>
         /// <returns>
         ///     The integer read.
         /// </returns>
@@ -59,7 +65,7 @@ namespace System
         /// <exception cref="ArgumentOutOfRangeException">
         ///     <paramref name="startIndex" /> is not a valid position.
         /// </exception>
-        public static int GetInt32(this byte[] bytes, int startIndex)
+        public static int GetInt32(this byte[] bytes, int startIndex, Endianness endianness = Endianness.Native)
         {
             if (bytes == null)
                 throw new ArgumentNullException(nameof(bytes));
@@ -67,9 +73,9 @@ namespace System
             if (startIndex < 0 || sizeof(int) > bytes.Length - startIndex)
                 throw new ArgumentOutOfRangeException(nameof(startIndex));
 
-            var value = BitConverter.ToInt32(bytes, startIndex);
-
-            return value;
+            var value1 = BitConverter.ToInt32(bytes, startIndex);
+            var value2 = value1.ToEndian(endianness);
+            return value2;
         }
 
         /// <summary>
@@ -81,6 +87,9 @@ namespace System
         /// <param name="startIndex">
         ///     The starting position within the array.
         /// </param>
+        /// <param name="endianness">
+        ///     The integer endianness.
+        /// </param>
         /// <returns>
         ///     The integer read.
         /// </returns>
@@ -90,7 +99,7 @@ namespace System
         /// <exception cref="ArgumentOutOfRangeException">
         ///     <paramref name="startIndex" /> is not a valid position.
         /// </exception>
-        public static long GetInt64(this byte[] bytes, int startIndex)
+        public static long GetInt64(this byte[] bytes, int startIndex, Endianness endianness = Endianness.Native)
         {
             if (bytes == null)
                 throw new ArgumentNullException(nameof(bytes));
@@ -98,9 +107,9 @@ namespace System
             if (startIndex < 0 || sizeof(long) > bytes.Length - startIndex)
                 throw new ArgumentOutOfRangeException(nameof(startIndex));
 
-            var value = BitConverter.ToInt64(bytes, startIndex);
-
-            return value;
+            var value1 = BitConverter.ToInt64(bytes, startIndex);
+            var value2 = value1.ToEndian(endianness);
+            return value2;
         }
 
         /// <summary>
@@ -112,6 +121,9 @@ namespace System
         /// <param name="startIndex">
         ///     The starting position within the array.
         /// </param>
+        /// <param name="endianness">
+        ///     The integer endianness.
+        /// </param>
         /// <returns>
         ///     The integer read.
         /// </returns>
@@ -121,7 +133,7 @@ namespace System
         /// <exception cref="ArgumentOutOfRangeException">
         ///     <paramref name="startIndex" /> is not a valid position.
         /// </exception>
-        public static ushort GetUInt16(this byte[] bytes, int startIndex)
+        public static ushort GetUInt16(this byte[] bytes, int startIndex, Endianness endianness = Endianness.Native)
         {
             if (bytes == null)
                 throw new ArgumentNullException(nameof(bytes));
@@ -129,9 +141,9 @@ namespace System
             if (startIndex < 0 || sizeof(ushort) > bytes.Length - startIndex)
                 throw new ArgumentOutOfRangeException(nameof(startIndex));
 
-            var value = BitConverter.ToUInt16(bytes, startIndex);
-
-            return value;
+            var value1 = BitConverter.ToUInt16(bytes, startIndex);
+            var value2 = value1.ToEndian(endianness);
+            return value2;
         }
 
         /// <summary>
@@ -143,6 +155,9 @@ namespace System
         /// <param name="startIndex">
         ///     The starting position within the array.
         /// </param>
+        /// <param name="endianness">
+        ///     The integer endianness.
+        /// </param>
         /// <returns>
         ///     The integer read.
         /// </returns>
@@ -152,7 +167,7 @@ namespace System
         /// <exception cref="ArgumentOutOfRangeException">
         ///     <paramref name="startIndex" /> is not a valid position.
         /// </exception>
-        public static uint GetUInt32(this byte[] bytes, int startIndex)
+        public static uint GetUInt32(this byte[] bytes, int startIndex, Endianness endianness = Endianness.Native)
         {
             if (bytes == null)
                 throw new ArgumentNullException(nameof(bytes));
@@ -160,9 +175,9 @@ namespace System
             if (startIndex < 0 || sizeof(uint) > bytes.Length - startIndex)
                 throw new ArgumentOutOfRangeException(nameof(startIndex));
 
-            var value = BitConverter.ToUInt32(bytes, startIndex);
-
-            return value;
+            var value1 = BitConverter.ToUInt32(bytes, startIndex);
+            var value2 = value1.ToEndian(endianness);
+            return value2;
         }
 
         /// <summary>
@@ -174,6 +189,9 @@ namespace System
         /// <param name="startIndex">
         ///     The starting position within the array.
         /// </param>
+        /// <param name="endianness">
+        ///     The integer endianness.
+        /// </param>
         /// <returns>
         ///     The integer read.
         /// </returns>
@@ -183,7 +201,8 @@ namespace System
         /// <exception cref="ArgumentOutOfRangeException">
         ///     <paramref name="startIndex" /> is not a valid position.
         /// </exception>
-        public static ulong GetUInt64([NotNull] this byte[] bytes, int startIndex)
+        public static ulong GetUInt64(
+            [NotNull] this byte[] bytes, int startIndex, Endianness endianness = Endianness.Native)
         {
             if (bytes == null)
                 throw new ArgumentNullException(nameof(bytes));
@@ -191,9 +210,9 @@ namespace System
             if (startIndex < 0 || sizeof(ulong) > bytes.Length - startIndex)
                 throw new ArgumentOutOfRangeException(nameof(startIndex));
 
-            var value = BitConverter.ToUInt64(bytes, startIndex);
-
-            return value;
+            var value1 = BitConverter.ToUInt64(bytes, startIndex);
+            var value2 = value1.ToEndian(endianness);
+            return value2;
         }
 
         /// <summary>
