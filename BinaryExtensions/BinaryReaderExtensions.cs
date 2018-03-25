@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using System.Runtime.InteropServices;
 using System.Text;
 using BinaryExtensions.Annotations;
 
@@ -79,6 +80,43 @@ namespace System.IO
             var value = func(reader);
 
             return value;
+        }
+
+        /// <summary>
+        ///     Reads a structure (see Remarks).
+        /// </summary>
+        /// <param name="reader">
+        ///     The <see cref="BinaryReader" /> to read from.
+        /// </param>
+        /// <typeparam name="T">
+        ///     Structure type.
+        /// </typeparam>
+        /// <returns>
+        ///     The structure read.
+        /// </returns>
+        /// <exception cref="ArgumentNullException">
+        ///     <paramref name="reader" /> is <c>null</c>.
+        /// </exception>
+        /// <remarks>
+        ///     The structure will be read using <see cref="Marshal.SizeOf{T}()" /> and
+        ///     <see cref="Marshal.PtrToStructure{T}(System.IntPtr)" />.
+        /// </remarks>
+        [PublicAPI]
+        public static T ReadStruct<T>([NotNull] this BinaryReader reader) where T : struct
+        {
+            if (reader == null)
+                throw new ArgumentNullException(nameof(reader));
+
+            var size = Marshal.SizeOf<T>();
+            var bytes = reader.ReadBytes(size);
+
+            var ptr = Marshal.AllocHGlobal(size);
+            Marshal.Copy(bytes, 0, ptr, size);
+
+            var structure = Marshal.PtrToStructure<T>(ptr);
+            Marshal.FreeHGlobal(ptr);
+
+            return structure;
         }
 
         /// <summary>
