@@ -248,7 +248,7 @@ namespace System
             if (sizeof(short) > bytes.Length - startIndex)
                 return null;
 
-            var value = bytes.GetInt16(startIndex).ToEndian(endianness);
+            var value = bytes.GetInt16(startIndex, endianness);
 
             return value;
         }
@@ -286,7 +286,7 @@ namespace System
             if (sizeof(int) > bytes.Length - startIndex)
                 return null;
 
-            var value = bytes.GetInt32(startIndex).ToEndian(endianness);
+            var value = bytes.GetInt32(startIndex, endianness);
 
             return value;
         }
@@ -324,7 +324,7 @@ namespace System
             if (sizeof(long) > bytes.Length - startIndex)
                 return null;
 
-            var value = bytes.GetInt64(startIndex).ToEndian(endianness);
+            var value = bytes.GetInt64(startIndex, endianness);
 
             return value;
         }
@@ -362,7 +362,7 @@ namespace System
             if (sizeof(ushort) > bytes.Length - startIndex)
                 return null;
 
-            var value = bytes.GetUInt16(startIndex).ToEndian(endianness);
+            var value = bytes.GetUInt16(startIndex, endianness);
 
             return value;
         }
@@ -400,7 +400,7 @@ namespace System
             if (sizeof(uint) > bytes.Length - startIndex)
                 return null;
 
-            var value = bytes.GetUInt32(startIndex).ToEndian(endianness);
+            var value = bytes.GetUInt32(startIndex, endianness);
 
             return value;
         }
@@ -438,7 +438,7 @@ namespace System
             if (sizeof(ulong) > bytes.Length - startIndex)
                 return null;
 
-            var value = bytes.GetUInt64(startIndex).ToEndian(endianness);
+            var value = bytes.GetUInt64(startIndex, endianness);
 
             return value;
         }
