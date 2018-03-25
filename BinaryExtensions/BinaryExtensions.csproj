@@ -42,6 +42,7 @@
     <Compile Include="Annotations\Annotations.cs" />
     <Compile Include="BinaryReaderExtensions.cs" />
     <Compile Include="BinaryWriterExtensions.cs" />
+    <Compile Include="DirectoryLocator.cs" />
     <Compile Include="IntegralTypesExtensions.cs" />
     <Compile Include="EndiannesExtensions.cs" />
     <Compile Include="Endianness.cs" />
