@@ -192,7 +192,8 @@ namespace System.IO
         ///     The enumeration member is not defined.
         /// </exception>
         [SuppressMessage("ReSharper", "ParameterOnlyUsedForPreconditionCheck.Global")]
-        public static T ReadEnum<T>([NotNull] this BinaryReader reader, Endianness endianness, bool throwOnError)
+        public static T ReadEnum<T>([NotNull] this BinaryReader reader, Endianness endianness = Endianness.Native,
+            bool throwOnError = true)
             where T : struct, IConvertible
         {
             if (reader == null)
