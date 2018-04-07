@@ -42,7 +42,6 @@
     <Compile Include="Annotations\Annotations.cs" />
     <Compile Include="BinaryReaderExtensions.cs" />
     <Compile Include="BinaryWriterExtensions.cs" />
-    <Compile Include="DirectoryLocator.cs" />
     <Compile Include="Experimental\Int16BE.cs" />
     <Compile Include="Experimental\Int16LE.cs" />
     <Compile Include="Experimental\Int32BE.cs" />
