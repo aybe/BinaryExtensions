@@ -10,7 +10,10 @@ namespace System.IO
     {
         internal LoggedBinaryReaderJournal([NotNull] LoggedBinaryReader reader)
         {
-            Reader = reader ?? throw new ArgumentNullException(nameof(reader));
+            if (reader == null) 
+                throw new ArgumentNullException(nameof(reader));
+
+            Reader = reader;
             Regions = new List<LoggedBinaryReaderRegion>();
         }
 
@@ -47,8 +50,8 @@ namespace System.IO
 
         public LoggedBinaryReaderRegion this[int index]
         {
-            get => Regions[index];
-            set => Regions[index] = value;
+            get { return Regions[index]; }
+            set { Regions[index] = value; }
         }
 
         public int Count => Regions.Count;

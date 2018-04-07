@@ -40,10 +40,12 @@ namespace System
             this TStruct @struct, Expression<Func<TStruct, TField>> expression, FieldOffset offset = FieldOffset.Begin)
             where TStruct : struct
         {
-            if (!(expression.Body is MemberExpression memberExpression))
+            var memberExpression = expression.Body as MemberExpression;
+            if (memberExpression == null)
                 throw new ArgumentOutOfRangeException(nameof(expression));
 
-            if (!(memberExpression.Member is FieldInfo fieldInfo))
+            var fieldInfo = memberExpression.Member as FieldInfo;
+            if (fieldInfo == null)
                 throw new ArgumentOutOfRangeException(nameof(expression));
 
             var offset1 = Marshal.OffsetOf<TStruct>(fieldInfo.Name);

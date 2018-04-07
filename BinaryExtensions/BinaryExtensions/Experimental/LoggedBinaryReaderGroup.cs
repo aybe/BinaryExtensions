@@ -7,7 +7,10 @@ namespace System.IO
     {
         public LoggedBinaryReaderGroup([NotNull] LoggedBinaryReader reader)
         {
-            Reader = reader ?? throw new ArgumentNullException(nameof(reader));
+            if (reader == null) 
+                throw new ArgumentNullException(nameof(reader));
+            
+            Reader = reader;
             reader.BeginGroupInternal();
         }
 

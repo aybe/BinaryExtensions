@@ -9,7 +9,10 @@ namespace System.IO
 
         internal LoggedBinaryReaderScope([NotNull] LoggedBinaryReaderJournal journal)
         {
-            Journal = journal ?? throw new ArgumentNullException(nameof(journal));
+            if (journal == null) 
+                throw new ArgumentNullException(nameof(journal));
+
+            Journal = journal;
             Journal.BeginLog();
         }
 
