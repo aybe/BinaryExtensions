@@ -47,6 +47,11 @@
     <Compile Include="Experimental\Int16LE.cs" />
     <Compile Include="Experimental\Int32BE.cs" />
     <Compile Include="Experimental\Int32LE.cs" />
+    <Compile Include="Experimental\LoggedBinaryReader.cs" />
+    <Compile Include="Experimental\LoggedBinaryReaderGroup.cs" />
+    <Compile Include="Experimental\LoggedBinaryReaderJournal.cs" />
+    <Compile Include="Experimental\LoggedBinaryReaderRegion.cs" />
+    <Compile Include="Experimental\LoggedBinaryReaderScope.cs" />
     <Compile Include="Experimental\UInt16BE.cs" />
     <Compile Include="Experimental\UInt16LE.cs" />
     <Compile Include="Experimental\UInt32BE.cs" />
