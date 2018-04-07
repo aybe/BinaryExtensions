@@ -289,6 +289,56 @@ namespace System.IO
             return ascii;
         }
 
+        /// <summary>
+        ///     Reads a null-terminated ASCII string.
+        /// </summary>
+        /// <param name="reader">
+        ///     The source <see cref="BinaryReader" /> to read from.
+        /// </param>
+        /// <param name="greedy">
+        ///     Whether to consume all trailing NUL characters, default is <c>false</c>.
+        /// </param>
+        /// <returns>
+        ///     The string read.
+        /// </returns>
+        /// <exception cref="ArgumentNullException">
+        ///     <paramref name="reader" /> is <c>null</c>.
+        /// </exception>
+        public static string ReadStringAsciiNullTerminated([JetBrains.Annotations.NotNull] this BinaryReader reader,
+            bool greedy = false)
+        {
+            if (reader == null)
+                throw new ArgumentNullException(nameof(reader));
+
+            var builder = new StringBuilder();
+
+            while (true)
+            {
+                var c = (char) reader.ReadByte();
+                if (c == '\0')
+                    break;
+
+                builder.Append(c);
+            }
+
+            if (greedy)
+            {
+                while (true)
+                {
+                    var c = (char) reader.ReadByte();
+                    if (c == '\0')
+                        continue;
+
+                    reader.Roll(sizeof(byte));
+                    break;
+                }
+            }
+
+            var ascii = builder.ToString();
+
+            return ascii;
+        }
+
         #endregion
 
         #region Length
@@ -498,6 +548,34 @@ namespace System.IO
             reader.Position(position);
 
             return reader.ReadBytes(count);
+        }
+
+        /// <summary>
+        ///     Reads two nibbles.
+        /// </summary>
+        /// <param name="reader">
+        ///     The source <see cref="BinaryReader" /> to read from.
+        /// </param>
+        /// <returns>
+        ///     The nibbles read.
+        /// </returns>
+        /// <exception cref="ArgumentNullException">
+        ///     <paramref name="reader" /> is <c>null</c>.
+        /// </exception>
+        public static byte[] ReadNibbles([JetBrains.Annotations.NotNull] this BinaryReader reader)
+        {
+            if (reader == null)
+                throw new ArgumentNullException(nameof(reader));
+
+            var b = reader.ReadByte();
+
+            var nibbles = new[]
+            {
+                (byte) ((b >> 4) & 0xF),
+                (byte) ((b >> 0) & 0xF)
+            };
+
+            return nibbles;
         }
 
         #endregion
