@@ -43,6 +43,14 @@
     <Compile Include="BinaryReaderExtensions.cs" />
     <Compile Include="BinaryWriterExtensions.cs" />
     <Compile Include="DirectoryLocator.cs" />
+    <Compile Include="Experimental\Int16BE.cs" />
+    <Compile Include="Experimental\Int16LE.cs" />
+    <Compile Include="Experimental\Int32BE.cs" />
+    <Compile Include="Experimental\Int32LE.cs" />
+    <Compile Include="Experimental\UInt16BE.cs" />
+    <Compile Include="Experimental\UInt16LE.cs" />
+    <Compile Include="Experimental\UInt32BE.cs" />
+    <Compile Include="Experimental\UInt32LE.cs" />
     <Compile Include="FieldOffset.cs" />
     <Compile Include="IntegralTypesExtensions.cs" />
     <Compile Include="EndiannesExtensions.cs" />
