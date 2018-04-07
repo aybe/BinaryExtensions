@@ -63,5 +63,8 @@
     <Compile Include="StreamExtensions.cs" />
     <Compile Include="StructExtensions.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BinaryExtensions\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
