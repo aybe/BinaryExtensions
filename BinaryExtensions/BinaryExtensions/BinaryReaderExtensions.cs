@@ -12,10 +12,6 @@ namespace System.IO
     [SuppressMessage("ReSharper", "InconsistentNaming")]
     public static class BinaryReaderExtensions
     {
-        #region Public fields
-
-        #endregion
-
         #region Objects
 
         /// <summary>
@@ -51,8 +47,8 @@ namespace System.IO
             reader.Position(position);
 
             return value;
-        }   
-        
+        }
+
         /// <summary>
         ///     Reads an object at current position.
         /// </summary>
