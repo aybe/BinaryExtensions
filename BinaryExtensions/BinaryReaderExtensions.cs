@@ -83,6 +83,54 @@ namespace System.IO
         }
 
         /// <summary>
+        ///     Reads an array of objects at current position.
+        /// </summary>
+        /// <typeparam name="T">
+        ///     Objects type.
+        /// </typeparam>
+        /// <param name="reader">
+        ///     The <see cref="BinaryReader" /> to read from.
+        /// </param>
+        /// <param name="func">
+        ///     Function that reads the objects.
+        /// </param>
+        /// <param name="count">
+        ///     Number of objects to read.
+        /// </param>
+        /// <returns>
+        ///     The objects read.
+        /// </returns>
+        /// <exception cref="ArgumentNullException">
+        ///     <paramref name="reader" /> or <paramref name="func" /> are <code>null</code>.
+        /// </exception>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     <paramref name="count" /> is less than or equal to zero.
+        /// </exception>
+        [PublicAPI]
+        public static T[] Read<T>(this BinaryReader reader, Func<BinaryReader, T> func, int count)
+        {
+            if (reader == null)
+                throw new ArgumentNullException(nameof(reader));
+
+            if (func == null)
+                throw new ArgumentNullException(nameof(func));
+
+            if (count <= 0)
+                throw new ArgumentOutOfRangeException(nameof(count));
+
+            var values = new T[count];
+
+            for (var i = 0; i < values.Length; i++)
+            {
+                var value = reader.Read(func);
+
+                values[i] = value;
+            }
+
+            return values;
+        }
+
+        /// <summary>
         ///     Reads a structure (see Remarks).
         /// </summary>
         /// <param name="reader">
