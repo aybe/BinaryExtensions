@@ -10,7 +10,7 @@ namespace System.IO
     {
         internal LoggedBinaryReaderJournal([NotNull] LoggedBinaryReader reader)
         {
-            if (reader == null) 
+            if (reader == null)
                 throw new ArgumentNullException(nameof(reader));
 
             Reader = reader;
