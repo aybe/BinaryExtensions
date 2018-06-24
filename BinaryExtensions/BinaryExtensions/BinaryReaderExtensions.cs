@@ -300,7 +300,8 @@ namespace System.IO
         /// <exception cref="ArgumentNullException">
         ///     <paramref name="reader" /> is <c>null</c>.
         /// </exception>
-        public static string ReadStringAsciiNullTerminated([JetBrains.Annotations.NotNull] this BinaryReader reader,
+        [PublicAPI]
+        public static string ReadStringAsciiNullTerminated([NotNull] this BinaryReader reader,
             bool greedy = false)
         {
             if (reader == null)
@@ -558,7 +559,8 @@ namespace System.IO
         /// <exception cref="ArgumentNullException">
         ///     <paramref name="reader" /> is <c>null</c>.
         /// </exception>
-        public static byte[] ReadNibbles([JetBrains.Annotations.NotNull] this BinaryReader reader)
+        [PublicAPI]
+        public static byte[] ReadNibbles([NotNull] this BinaryReader reader)
         {
             if (reader == null)
                 throw new ArgumentNullException(nameof(reader));
