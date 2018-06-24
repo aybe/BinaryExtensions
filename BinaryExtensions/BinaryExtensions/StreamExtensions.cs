@@ -80,6 +80,55 @@ namespace System.IO
         }
 
         /// <summary>
+        ///     Reads bytes at specified position.
+        /// </summary>
+        /// <param name="stream">
+        ///     The source <see cref="Stream" /> to read from.
+        /// </param>
+        /// <param name="count">
+        ///     Number of bytes to read.
+        /// </param>
+        /// <param name="position">
+        ///     Position to start reading from.
+        /// </param>
+        /// <returns>Bytes read.</returns>
+        /// <exception cref="ArgumentNullException">
+        ///     <paramref name="stream" /> is <c>null</c>.
+        /// </exception>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     <paramref name="count" /> is less than or equal to zero.
+        /// </exception>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     <paramref name="position" /> is outside <paramref name="stream" /> bounds.
+        /// </exception>
+        /// <exception cref="EndOfStreamException">
+        ///     Not enough bytes could be read.
+        /// </exception>
+        [PublicAPI]
+        public static byte[] ReadBytes([NotNull] this Stream stream, int count, long position)
+        {
+            if (stream == null)
+                throw new ArgumentNullException(nameof(stream));
+
+            if (count <= 0)
+                throw new ArgumentOutOfRangeException(nameof(count));
+
+            if (position < 0 || position >= stream.Length)
+                throw new ArgumentOutOfRangeException(nameof(position));
+
+            stream.Position = position;
+
+            var buffer = new byte[count];
+
+            var read = stream.Read(buffer, 0, count);
+
+            if (read != count)
+                throw new EndOfStreamException();
+
+            return buffer;
+        }
+
+        /// <summary>
         ///     Writes a stream to a file.
         /// </summary>
         /// <param name="stream">
