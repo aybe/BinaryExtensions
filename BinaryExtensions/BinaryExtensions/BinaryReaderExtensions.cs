@@ -574,6 +574,27 @@ namespace System.IO
             return nibbles;
         }
 
+        /// <summary>
+        ///     Reads bytes from current position to end of stream.
+        /// </summary>
+        /// <param name="reader">
+        ///     The source <see cref="BinaryReader" /> to read from.
+        /// </param>
+        /// <returns>
+        ///     Bytes read.
+        /// </returns>
+        [PublicAPI]
+        public static byte[] ReadToEnd([NotNull] this BinaryReader reader)
+        {
+            if (reader == null)
+                throw new ArgumentNullException(nameof(reader));
+
+            var count = reader.BaseStream.Length - reader.BaseStream.Position;
+            var bytes = reader.ReadBytes(count.ToInt32());
+
+            return bytes;
+        }
+
         #endregion
 
         #region Integers
