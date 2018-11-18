@@ -5,15 +5,11 @@ Extension methods for BinaryReader and BinaryWriter.
 
 ## Features
 
-- Seamless reading of integral types in big-endian or little-endian format, environment endianness being irrelevant
-- Functions are exposed as extension methods for `BinaryReader` and all integral types
+- seamless reading of integral types in big-endian or little-endian format, environment endianness being irrelevant
+- functions are exposed as extension methods for `BinaryReader` and all integral types
+- endian-aware integral types, just declare structs and read them in one go with `ReadStruct<T>`
+- a `LoggedBinaryReader` that logs read and unread regions, very useful when deciphering some complex file format
 
 ## Requirements
 
-.NET Framework 4.6.1
-
-## Roadmap
-
-- Equivalent features for `BinaryWriter`
-- More bit-level related functions
-- Applicable paradigms from [Boost.Endian](http://www.boost.org/doc/libs/1_59_0/libs/endian/doc/index.html)
+At least .NET Framework 4.6.1.
