@@ -8,9 +8,11 @@
     <PackageProjectUrl>https://github.com/aybe/BinaryExtensions</PackageProjectUrl>
     <PackageIcon>BinaryExtensions.png</PackageIcon>
     <RepositoryUrl>https://github.com/aybe/BinaryExtensions</RepositoryUrl>
-    <PackageReleaseNotes>Major overhaul TODO</PackageReleaseNotes>
+    <PackageReleaseNotes>See CHANGELOG @ https://github.com/aybe/BinaryExtensions.</PackageReleaseNotes>
     <Authors>aybe</Authors>
-    <Description>Endian-aware extension methods for reading primitive types, and more.</Description>
+    <Description>Types and extension methods to deal with binary data.
+
+</Description>
     <RepositoryType>git</RepositoryType>
     <PackageTags>BinaryReader binary big-endian little-endian endianness LSB MSB</PackageTags>
     <Copyright>aybe</Copyright>
