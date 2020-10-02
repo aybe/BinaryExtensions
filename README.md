@@ -12,7 +12,10 @@ Types and extension methods to deal with binary data.
 
 ## CHANGELOG
 
-10/2/2020
+1.1.1 (10/2/2020)
+- publishing release configuration instead
+
+1.1.0 (10/2/2020)
 - **breaking changes**
   - not overloading `System.IO` namespace anymore
   - not everything has been back ported yet
@@ -22,7 +25,7 @@ Types and extension methods to deal with binary data.
 - version bump to 1.1.0
 - new icon
 
-11/18/2018
+1.0.* (11/18/2018)
 - seamless reading of integral types in big-endian or little-endian format, environment endianness being irrelevant
 - functions are exposed as extension methods for `BinaryReader` and all integral types
 - endian-aware integral types, just declare structs and read them in one go with `ReadStruct<T>`
