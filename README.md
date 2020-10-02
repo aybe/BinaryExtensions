@@ -13,7 +13,10 @@ Types and extension methods to deal with binary data.
 ## CHANGELOG
 
 10/2/2020
-- switching to .NET Standard **(not everything has been back ported, yet)**
+- **breaking changes**
+  - not overloading `System.IO` namespace anymore
+  - not everything has been back ported yet
+- switching to .NET Standard
 - better NuGet package with sources and symbols
 - now using T4 templates for code generation
 - version bump to 1.0.2
