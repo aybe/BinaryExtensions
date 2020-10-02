@@ -263,3 +263,4 @@ __pycache__/
 ################################################################################
 
 /nuget.exe
+BinaryExtensions/BinaryExtensions.xml
