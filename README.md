@@ -9,6 +9,8 @@ Types and extension methods to deal with binary data.
 ## Features
 
 - read primitives in any endianness using `Read` and `TryRead` extension methods for `BinaryReader` and `byte[]`
+- loggion of read and written regions in a stream
+  - e.g. reverse-engineering a file format and find what's currently been unexplored in the file by your logic
 
 ## CHANGELOG
 
