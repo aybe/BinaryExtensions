@@ -1,0 +1,133 @@
+﻿<#@ template debug="true" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ output extension=".g.cs" #>
+// this file was auto-generated
+using System;
+using System.IO;
+
+namespace BinaryExtensions
+{
+    public static partial class EndiannessExtensions
+    {
+<#
+    var types = new (string Type, string Text)[]
+    {
+        (nameof(Int16),  "a 16-bit signed"),
+        (nameof(Int32),  "a 32-bit signed"),
+        (nameof(Int64),  "a 64-bit signed"),
+        (nameof(UInt16), "a 16-bit unsigned"),
+        (nameof(UInt32), "a 32-bit unsigned"),
+        (nameof(UInt64), "a 64-bit unsigned")
+    };
+
+    foreach (var (type, text) in types)
+    {
+#>
+        /// <summary>Reads <#= text #> integer from current stream.</summary>
+        /// <param name="reader">The source binary reader.</param>
+        /// <param name="endianness">The endianness of the integer.</param>
+        /// <returns>The integer read from the stream.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="reader" /> is <c>null</c>.</exception>
+        /// <exception cref="EndOfStreamException">Not enough bytes to read the integer from current position.</exception>
+        public static <#= type #> Read<#= type #>(this BinaryReader reader, Endianness endianness)
+        {
+            if (reader == null)
+                throw new ArgumentNullException(nameof(reader));
+
+            if (reader.BaseStream.Position + sizeof(<#= type #>) > reader.BaseStream.Length)
+                throw new EndOfStreamException();
+
+            var value = reader.Read<#= type #>();
+
+            return endianness == Endianness || endianness == Endianness.Native ? value : ReverseEndianness(value);
+        }
+
+<#
+    }
+
+    foreach (var (type, text) in types)
+    {
+#>
+        /// <summary>Reads <#= text #> integer from this array.</summary>
+        /// <param name="array">The source array.</param>
+        /// <param name="index">The position to read the integer from <paramref name="array"/>.</param>
+        /// <param name="endianness">The endianness of the integer.</param>
+        /// <returns>The integer read from the array.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="array" /> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Not enough bytes to read the integer from <paramref name="index" />.</exception>
+        public static <#= type #> Read<#=type #>(this byte[] array, int index, Endianness endianness)
+        {
+            if (array == null)
+                throw new ArgumentNullException(nameof(array));
+
+            if (index < 0 || index + sizeof(<#=type #>) > array.Length)
+                throw new ArgumentOutOfRangeException(nameof(index));
+            
+            var value = BitConverter.To<#=type #>(array, index);
+            
+            return endianness == Endianness || endianness == Endianness.Native ? value : ReverseEndianness(value);
+        } 
+         
+<#
+    }
+    foreach (var (type, text) in types)
+    {
+#>
+        
+        /// <summary>Tries to read <#= text #> integer from current stream.</summary>
+        /// <param name="reader">The source binary reader.</param>
+        /// <param name="endianness">The endianness of the integer.</param>
+        /// <param name="result">The variable receiving the integer.</param>
+        /// <returns><c>true</c> if the integer was read from stream; otherwise, <c>false</c>.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="reader" /> is <c>null</c>.</exception>
+        public static bool TryRead<#= type #>(this BinaryReader reader, Endianness endianness, out <#= type #> result)
+        {
+            result = default;
+            
+            if (reader == null)
+                throw new ArgumentNullException(nameof(reader));
+
+            if (reader.BaseStream.Position + sizeof(<#= type #>) > reader.BaseStream.Length)
+                return false;
+
+            var value = reader.Read<#= type #>(endianness);
+
+            result = endianness == Endianness || endianness == Endianness.Native ? value : ReverseEndianness(value);
+
+            return true;
+        }
+        
+<#
+    }
+    foreach (var (type, text) in types)
+    {
+#>
+       
+        /// <summary>Tries to read <#= text #> integer from this array.</summary>
+        /// <param name="array">The source array.</param>
+        /// <param name="index">The position to read the integer from <paramref name="array"/>.</param>
+        /// <param name="endianness">The endianness of the integer to read.</param>
+        /// <param name="result">The variable receiving the integer.</param>
+        /// <returns><c>true</c> if the integer was read from array; otherwise, <c>false</c>.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="array" /> is <c>null</c>.</exception>
+        public static bool TryRead<#=type #>(this byte[] array, int index, Endianness endianness, out <#= type #> result)
+        {
+            result = default;
+
+            if (array == null)
+                throw new ArgumentNullException(nameof(array));
+
+            if (index < 0 || index + sizeof(<#=type #>) > array.Length)
+                return false;
+            
+            var value = BitConverter.To<#=type #>(array, index);
+            
+            value = endianness == Endianness || endianness == Endianness.Native ? value : ReverseEndianness(value);
+            
+            return true;
+        }
+<#
+    }
+#>
+    }
+}

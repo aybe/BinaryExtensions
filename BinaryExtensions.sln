@@ -1,9 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27428.2005
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30524.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryExtensions", "BinaryExtensions\BinaryExtensions.csproj", "{35ED621C-DDC0-4939-A036-A0653521F61B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinaryExtensions", "BinaryExtensions\BinaryExtensions.csproj", "{13146840-B64A-4632-9F8A-A6BD238BBCFC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{69891305-EF56-4E38-876C-F02B869B13D0}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryExtensions2", "BinaryExtensions2\BinaryExtensions2.csproj", "{35ED621C-DDC0-4939-A036-A0653521F61B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,6 +18,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13146840-B64A-4632-9F8A-A6BD238BBCFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13146840-B64A-4632-9F8A-A6BD238BBCFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13146840-B64A-4632-9F8A-A6BD238BBCFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13146840-B64A-4632-9F8A-A6BD238BBCFC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{35ED621C-DDC0-4939-A036-A0653521F61B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{35ED621C-DDC0-4939-A036-A0653521F61B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35ED621C-DDC0-4939-A036-A0653521F61B}.Release|Any CPU.ActiveCfg = Release|Any CPU
