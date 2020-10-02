@@ -10,8 +10,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryExtensions2", "BinaryExtensions2\BinaryExtensions2.csproj", "{35ED621C-DDC0-4939-A036-A0653521F61B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,10 +20,6 @@ Global
 		{13146840-B64A-4632-9F8A-A6BD238BBCFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13146840-B64A-4632-9F8A-A6BD238BBCFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13146840-B64A-4632-9F8A-A6BD238BBCFC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{35ED621C-DDC0-4939-A036-A0653521F61B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{35ED621C-DDC0-4939-A036-A0653521F61B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{35ED621C-DDC0-4939-A036-A0653521F61B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{35ED621C-DDC0-4939-A036-A0653521F61B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

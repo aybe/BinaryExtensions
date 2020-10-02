@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{35ED621C-DDC0-4939-A036-A0653521F61B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BinaryExtensions</RootNamespace>
+    <AssemblyName>BinaryExtensions</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BinaryExtensions\Annotations\CanBeNullAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\AspChildControlTypeAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\AspDataFieldAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\AspDataFieldsAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\AspMethodPropertyAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\AspMvcActionAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\AspMvcActionSelectorAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\AspMvcAreaAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\AspMvcAreaMasterLocationFormatAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\AspMvcAreaPartialViewLocationFormatAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\AspMvcAreaViewLocationFormatAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\AspMvcControllerAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\AspMvcDisplayTemplateAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\AspMvcEditorTemplateAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\AspMvcMasterAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\AspMvcMasterLocationFormatAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\AspMvcModelTypeAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\AspMvcPartialViewAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\AspMvcPartialViewLocationFormatAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\AspMvcSuppressViewErrorAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\AspMvcTemplateAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\AspMvcViewAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\AspMvcViewComponentAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\AspMvcViewComponentViewAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\AspMvcViewLocationFormatAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\AspRequiredAttributeAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\AspTypePropertyAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\AssertionConditionAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\AssertionConditionType.cs" />
+    <Compile Include="BinaryExtensions\Annotations\AssertionMethodAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\BaseTypeRequiredAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\CannotApplyEqualityOperatorAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\CollectionAccessAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\CollectionAccessType.cs" />
+    <Compile Include="BinaryExtensions\Annotations\ContractAnnotationAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\HtmlAttributeValueAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\HtmlElementAttributesAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\ImplicitUseKindFlags.cs" />
+    <Compile Include="BinaryExtensions\Annotations\ImplicitUseTargetFlags.cs" />
+    <Compile Include="BinaryExtensions\Annotations\InstantHandleAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\InvokerParameterNameAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\ItemCanBeNullAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\ItemNotNullAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\LinqTunnelAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\LocalizationRequiredAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\MacroAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\MeansImplicitUseAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\MustUseReturnValueAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\NoEnumerationAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\NoReorderAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\NotifyPropertyChangedInvocatorAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\NotNullAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\PathReferenceAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\ProvidesContextAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\PublicAPIAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\PureAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\RazorDirectiveAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\RazorHelperCommonAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\RazorImportNamespaceAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\RazorInjectionAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\RazorLayoutAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\RazorPageBaseTypeAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\RazorSectionAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\RazorWriteLiteralMethodAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\RazorWriteMethodAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\RazorWriteMethodParameterAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\RegexPatternAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\SourceTemplateAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\StringFormatMethodAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\TerminatesProgramAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\UsedImplicitlyAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\ValueProviderAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\XamlItemBindingOfItemsControlAttribute.cs" />
+    <Compile Include="BinaryExtensions\Annotations\XamlItemsControlAttribute.cs" />
+    <Compile Include="BinaryExtensions\BinaryReaderExtensions.cs" />
+    <Compile Include="BinaryExtensions\BinaryWriterExtensions.cs" />
+    <Compile Include="BinaryExtensions\Experimental\Int16BE.cs" />
+    <Compile Include="BinaryExtensions\Experimental\Int16LE.cs" />
+    <Compile Include="BinaryExtensions\Experimental\Int32BE.cs" />
+    <Compile Include="BinaryExtensions\Experimental\Int32LE.cs" />
+    <Compile Include="BinaryExtensions\Experimental\LoggedBinaryReader.cs" />
+    <Compile Include="BinaryExtensions\Experimental\LoggedBinaryReaderGroup.cs" />
+    <Compile Include="BinaryExtensions\Experimental\LoggedBinaryReaderJournal.cs" />
+    <Compile Include="BinaryExtensions\Experimental\LoggedBinaryReaderRegion.cs" />
+    <Compile Include="BinaryExtensions\Experimental\LoggedBinaryReaderScope.cs" />
+    <Compile Include="BinaryExtensions\Experimental\UInt16BE.cs" />
+    <Compile Include="BinaryExtensions\Experimental\UInt16LE.cs" />
+    <Compile Include="BinaryExtensions\Experimental\UInt32BE.cs" />
+    <Compile Include="BinaryExtensions\Experimental\UInt32LE.cs" />
+    <Compile Include="BinaryExtensions\FieldOffset.cs" />
+    <Compile Include="BinaryExtensions\IntegralTypesExtensions.cs" />
+    <Compile Include="BinaryExtensions\EndiannesExtensions.cs" />
+    <Compile Include="BinaryExtensions\Endianness.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BinaryExtensions\StreamExtensions.cs" />
+    <Compile Include="BinaryExtensions\StructExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
