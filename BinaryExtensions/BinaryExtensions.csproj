@@ -16,11 +16,12 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>BinaryReader binary big-endian little-endian endianness LSB MSB</PackageTags>
     <Copyright>aybe</Copyright>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <LangVersion>default</LangVersion>
+    <AssemblyVersion>1.1.1.0</AssemblyVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
