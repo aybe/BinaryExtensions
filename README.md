@@ -16,7 +16,7 @@ Types and extension methods to deal with binary data.
 - **breaking changes**
   - not overloading `System.IO` namespace anymore
   - not everything has been back ported yet
-- switching to .NET Standard
+- switching to .NET Standard 2.1
 - better NuGet package with sources and symbols
 - now using T4 templates for code generation
 - version bump to 1.0.2
