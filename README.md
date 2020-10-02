@@ -1,13 +1,14 @@
 # BinaryExtensions
-Types and extension methods to deal with binary data.
-
-## NuGet
+![BinaryExtensions](BinaryExtensions.png)
 
 [![NuGet](https://img.shields.io/badge/nuget-latest-blue.svg)](https://www.nuget.org/packages/BinaryExtensions)
 [![NuGet](https://img.shields.io/badge/nuget-1.0.6896.28656-blue.svg)](https://www.nuget.org/packages/BinaryExtensions/1.0.6896.28656)
 
+Types and extension methods to deal with binary data.
+
 ## Features
- - read primitives in any endianness using `Read` and `TryRead` extension methods for `BinaryReader` and `byte[]`
+
+- read primitives in any endianness using `Read` and `TryRead` extension methods for `BinaryReader` and `byte[]`
 
 ## CHANGELOG
 
