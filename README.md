@@ -2,7 +2,6 @@
 ![BinaryExtensions](BinaryExtensions.png)
 
 [![NuGet](https://img.shields.io/badge/nuget-latest-blue.svg)](https://www.nuget.org/packages/BinaryExtensions)
-[![NuGet](https://img.shields.io/badge/nuget-1.0.6896.28656-blue.svg)](https://www.nuget.org/packages/BinaryExtensions/1.0.6896.28656)
 
 Types and extension methods to deal with binary data.
 
