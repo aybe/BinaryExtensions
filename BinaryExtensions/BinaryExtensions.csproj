@@ -44,7 +44,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="EndiannessExtensions.tt">
+    <None Update="BinaryExtensions\EndiannessExtensions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EndiannessExtensions.g.cs</LastGenOutput>
     </None>
@@ -55,7 +55,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="EndiannessExtensions.g.cs">
+    <Compile Update="BinaryExtensions\EndiannessExtensions.g.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>EndiannessExtensions.tt</DependentUpon>
