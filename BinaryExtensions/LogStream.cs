@@ -226,8 +226,8 @@ namespace BinaryExtensions
                 var pos   = region1.Position;
                 var max   = Math.Max(region1.Position + region1.Length, region2.Position + region2.Length);
                 var len   = max - pos;
-                var name1 = region1.Name?.Split(",", StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim());
-                var name2 = region2.Name?.Split(",", StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim());
+                var name1 = region1.Name?.Split(new[] {","}, StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim());
+                var name2 = region2.Name?.Split(new[] {","}, StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim());
                 var name3 = string.Join(", ", string.Concat(name1, name2));
 
                 source[i] = new LogStreamRegion(pos, len, name3);
@@ -242,11 +242,11 @@ namespace BinaryExtensions
 
             foreach (var region in source) // extract non-accessed regions
             {
-                var old    = target[^1];
+                var old    = target[target.Count - 1];
                 var oldPos = old.Position;
                 var oldLen = region.Position - oldPos;
 
-                target[^1] = new LogStreamRegion(oldPos, oldLen, old.Name);
+                target[target.Count - 1] = new LogStreamRegion(oldPos, oldLen, old.Name);
 
                 var newPos = region.Position + region.Length;
                 var newLen = Stream.Length - newPos;

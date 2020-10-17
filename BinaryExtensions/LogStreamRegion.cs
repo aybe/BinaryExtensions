@@ -59,7 +59,13 @@ namespace BinaryExtensions
         /// <inheritdoc />
         public override int GetHashCode()
         {
-            return HashCode.Combine(Position, Length, Name);
+            unchecked
+            {
+                var hashCode = Position.GetHashCode();
+                hashCode = (hashCode * 397) ^ Length.GetHashCode();
+                hashCode = (hashCode * 397) ^ (Name != null ? Name.GetHashCode() : 0);
+                return hashCode;
+            }
         }
 
         /// <summary>
