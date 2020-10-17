@@ -25,11 +25,11 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>C:\Users\Aybe\source\repos\BinaryExtensions\BinaryExtensions\BinaryExtensions.xml</DocumentationFile>
+    <DocumentationFile>C:\Users\Aybe\source\repos\BinaryExtensions\BinaryExtensions\BinaryExtensions\BinaryExtensions.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>C:\Users\Aybe\source\repos\BinaryExtensions\BinaryExtensions\BinaryExtensions.xml</DocumentationFile>
+    <DocumentationFile>C:\Users\Aybe\source\repos\BinaryExtensions\BinaryExtensions\BinaryExtensions\BinaryExtensions.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
