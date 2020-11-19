@@ -254,6 +254,8 @@ namespace BinaryExtensions
                 target.Add(new LogStreamRegion(newPos, newLen, region.Name));
             }
 
+            target = target.Where(s => s.Length > 0).ToList(); // simple fix
+
             return target.AsReadOnly();
         }
 
