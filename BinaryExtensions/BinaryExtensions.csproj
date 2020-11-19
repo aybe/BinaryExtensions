@@ -8,7 +8,7 @@
     <PackageProjectUrl>https://github.com/aybe/BinaryExtensions</PackageProjectUrl>
     <PackageIcon>BinaryExtensions.png</PackageIcon>
     <RepositoryUrl>https://github.com/aybe/BinaryExtensions</RepositoryUrl>
-    <PackageReleaseNotes>See CHANGELOG @ https://github.com/aybe/BinaryExtensions.</PackageReleaseNotes>
+    <PackageReleaseNotes>See CHANGELOG @ https://github.com/aybe/BinaryExtensions</PackageReleaseNotes>
     <Authors>aybe</Authors>
     <Description>Types and extension methods to deal with binary data.
 
@@ -16,12 +16,12 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>BinaryReader binary big-endian little-endian endianness LSB MSB</PackageTags>
     <Copyright>aybe</Copyright>
-    <Version>1.1.1</Version>
+    <Version>1.1.2</Version>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <LangVersion>8.0</LangVersion>
-    <AssemblyVersion>1.1.1.0</AssemblyVersion>
+    <AssemblyVersion>1.1.2.0</AssemblyVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
