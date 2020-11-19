@@ -55,6 +55,23 @@
                 <paramref name="reader" /> is <c>null</c>.
             </exception>
         </member>
+        <member name="M:BinaryExtensions.BinaryReaderExtensions.ReadToEnd(System.IO.BinaryReader)">
+            <summary>
+                Reads all bytes from the current position to the end of the stream.
+            </summary>
+            <param name="reader">
+                The source binary reader.
+            </param>
+            <returns>
+                The array of bytes read.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="reader"> is <c>null</c>.</paramref>
+            </exception>
+            <exception cref="T:System.OverflowException">
+                There is more than <see cref="F:System.Int32.MaxValue" /> bytes to read.
+            </exception>
+        </member>
         <member name="T:BinaryExtensions.Endianness">
             <summary>
                 Specifies the byte order for an integral type.

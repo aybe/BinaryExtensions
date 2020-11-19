@@ -104,5 +104,31 @@ namespace BinaryExtensions
 
             return result;
         }
+
+        /// <summary>
+        ///     Reads all bytes from the current position to the end of the stream.
+        /// </summary>
+        /// <param name="reader">
+        ///     The source binary reader.
+        /// </param>
+        /// <returns>
+        ///     The array of bytes read.
+        /// </returns>
+        /// <exception cref="ArgumentNullException">
+        ///     <paramref name="reader"> is <c>null</c>.</paramref>
+        /// </exception>
+        /// <exception cref="OverflowException">
+        ///     There is more than <see cref="int.MaxValue" /> bytes to read.
+        /// </exception>
+        public static byte[] ReadToEnd([NotNull] this BinaryReader reader)
+        {
+            if (reader is null)
+                throw new ArgumentNullException(nameof(reader));
+
+            var count = reader.BaseStream.Length - reader.BaseStream.Position;
+            var bytes = reader.ReadBytes(count.ToInt32());
+
+            return bytes;
+        }
     }
 }
