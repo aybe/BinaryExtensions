@@ -13,6 +13,13 @@ Types and extension methods to deal with binary data.
 
 ## CHANGELOG
 
+1.1.2 (11/19/2020)
+- added BinaryReader.ReadToEnd method
+- fixed LogStream.GetRegionsReadIntersect that was returning empty regions for fully read streams
+- added tests project
+- enforced C# 8.0 version so project can still be used in Unity
+- using internal annotations to prevent conflicts, e.g. when using UnityEngine.CoreModule in non-Unity projects
+
 1.1.1 (10/2/2020)
 - publishing release configuration instead
 
