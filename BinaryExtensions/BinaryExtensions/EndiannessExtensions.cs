@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
-using JetBrains.Annotations;
+using BinaryExtensions.Annotations;
 
 namespace BinaryExtensions
 {

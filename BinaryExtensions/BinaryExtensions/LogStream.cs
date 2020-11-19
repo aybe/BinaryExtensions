@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using JetBrains.Annotations;
+using BinaryExtensions.Annotations;
 
 namespace BinaryExtensions
 {

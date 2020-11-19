@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Text;
-using JetBrains.Annotations;
+using BinaryExtensions.Annotations;
 
 namespace BinaryExtensions
 {
